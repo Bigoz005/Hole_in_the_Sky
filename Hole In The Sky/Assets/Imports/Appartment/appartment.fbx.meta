@@ -3,7 +3,32 @@ guid: 86b517f946fd1d9459c1724335f8f1d5
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Celling
+    second: {fileID: 2100000, guid: a5352ce5d8218a640be7b6c0b78f878a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Floor
+    second: {fileID: 2100000, guid: 23c13713e65ee34498060b0ce6136b60, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Floor_Bathroom
+    second: {fileID: 2100000, guid: 44b317979bea64146a59381f224fe16b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: 6dca4a46788cb2d4790e04bf9835a65d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wall
+    second: {fileID: 2100000, guid: c08656e85f4f0df44aa593445ff77d74, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
