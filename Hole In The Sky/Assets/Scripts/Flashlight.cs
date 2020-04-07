@@ -11,6 +11,9 @@ public class Flashlight : MonoBehaviour
     public AudioClip flashLightOff;
 
     private bool isActive;
+
+    public bool IsActive { get => isActive; set => isActive = value; }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +24,16 @@ public class Flashlight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (flashLight.enabled)
+        {
+            isActive = true;
+        }
+        else
+        {
+            isActive = false;
+        }
+
         if (Input.GetKeyDown(KeyCode.F))
         {
             isActive = !isActive;
