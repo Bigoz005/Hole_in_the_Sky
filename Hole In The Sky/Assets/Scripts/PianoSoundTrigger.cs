@@ -7,7 +7,8 @@ public class PianoSoundTrigger : MonoBehaviour
     public AudioSource scaryPianoAudioSource;
     public AudioClip scarySound;
     public Light flashLight;
-    
+    public Light pianoLight;
+
 
     private bool hasPlayed;
 
@@ -17,11 +18,13 @@ public class PianoSoundTrigger : MonoBehaviour
         {
             scaryPianoAudioSource.PlayOneShot(scarySound);
             hasPlayed = true;
+            pianoLight.enabled = true;
 
             if (flashLight.enabled)
             {
                 flashLight.enabled = false;
             }
+
         }
         
     }
