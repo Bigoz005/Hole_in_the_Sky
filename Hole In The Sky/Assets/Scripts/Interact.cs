@@ -15,7 +15,7 @@ public class Interact : MonoBehaviour
 
     void Start()
     {
-        if(interactIcon != null)
+        if (interactIcon != null)
         {
             interactIcon.enabled = false;
         }
@@ -27,23 +27,33 @@ public class Interact : MonoBehaviour
         RaycastHit hit;
 
         // checks hits of ray within interactDistance in the interactLayer
-        if(Physics.Raycast(ray, out hit, interactDistance, interactLayer))
+        if (Physics.Raycast(ray, out hit, interactDistance, interactLayer))
         {
             if (!isInteracting)
             {
-                if(interactIcon != null)
+                if (interactIcon != null)
                 {
                     interactIcon.enabled = true;
                 }
-                
+
                 if (Input.GetButtonDown(interactButton))
                 {
                     if (hit.collider.CompareTag("Door"))
                     {
                         hit.collider.GetComponent<Door>().ChangeDoorState();
-                        Debug.Log(hit.collider.GetComponent<Door>().open);
+                    }
+                    else if (hit.collider.CompareTag("Key"))
+                    {
+                        hit.collider.GetComponent<Key>().UnlockDoor();
                     }
                 }
+            }
+        }
+        else
+        {
+            if (interactIcon != null)
+            {
+                interactIcon.enabled = false;
             }
         }
     }

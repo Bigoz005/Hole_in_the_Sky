@@ -5,6 +5,7 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
     public bool open = false;
+    public bool isLocked = false;
 
     public bool front = false;
     public bool back = false;
@@ -17,15 +18,28 @@ public class Door : MonoBehaviour
     private Quaternion targetRotationOpen;
     private AudioSource doorAudioSource;
     public AudioClip doorSound;
+    public AudioClip lockSound;
 
     public void ChangeDoorState()
     {
-        open = !open;
-
-        if (doorAudioSource != null)
+        if (!isLocked)
         {
-            doorAudioSource.PlayOneShot(doorSound);
+            open = !open;
+
+            if (doorAudioSource != null)
+            {
+                doorAudioSource.PlayOneShot(doorSound);
+            }
         }
+        else
+        {
+            PlayLockedDoorSound();
+        }
+    }
+
+    public void PlayLockedDoorSound()
+    {
+        doorAudioSource.PlayOneShot(lockSound);
     }
 
     private void Start()
