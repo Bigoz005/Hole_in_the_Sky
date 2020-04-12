@@ -8,6 +8,7 @@ public class PadLock : MonoBehaviour
 {
     public Canvas safeCanvas;
     public GameObject playerObject;
+    public GameObject chestObject;
 
     public AudioSource audioSource;
     public AudioClip upClickSound;
@@ -19,7 +20,7 @@ public class PadLock : MonoBehaviour
     private int number03 = 0;
     private int number04 = 0;
 
-    private int numberOfPlays = 0;
+    private bool wasPlayed = false;
 
     private string currentCode = "0000";
     private string code01 = "2137";
@@ -158,17 +159,6 @@ public class PadLock : MonoBehaviour
         currentCode = (number1Text.text + number2Text.text + number3Text.text + number4Text.text);
     }
 
-    private void BeforeDestroy()
-    {
-        if (numberOfPlays < 1)
-        {
-            audioSource.PlayOneShot(unlockSound);
-            numberOfPlays++;
-        }
-
-        StartCoroutine("WaitForDestroy");
-    }
-
     void Update()
     {
         if (Input.GetButtonDown("Cancel"))
@@ -183,10 +173,21 @@ public class PadLock : MonoBehaviour
                 button.enabled = false;
             }
 
-
+            chestObject.GetComponentInChildren<ChestDoor>().gameObject.layer = 8;
             HideSafeCanvas();
             BeforeDestroy();
         }
+    }
+
+    private void BeforeDestroy()
+    {
+        if (!wasPlayed)
+        {
+            audioSource.PlayOneShot(unlockSound);
+            wasPlayed = true;
+        }
+
+        StartCoroutine("WaitForDestroy");
     }
 
     public IEnumerator WaitForDestroy()
@@ -194,5 +195,7 @@ public class PadLock : MonoBehaviour
         yield return new WaitForSeconds(unlockSound.length);
         Destroy(gameObject);
     }
+
+  
 
 }

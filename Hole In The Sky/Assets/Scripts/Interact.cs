@@ -50,21 +50,25 @@ public class Interact : MonoBehaviour
                     {
                         hit.collider.GetComponent<PadLock>().ShowSafeCanvas();
                     }
+                    else if (hit.collider.CompareTag("Chest"))
+                    {
+                        hit.collider.GetComponentInChildren<ChestDoor>().ChangeDoorState();
+                    }
                     else if (hit.collider.CompareTag("PianoKey"))
                     {
 
                     }
                     else if (hit.collider.CompareTag("Sink"))
                     {
-
+                        hit.collider.GetComponent<Sink>().playSound();
                     }
                     else if (hit.collider.CompareTag("Bathtub"))
                     {
-
+                        hit.collider.GetComponent<Bathtub>().playSound();
                     }
                     else if (hit.collider.CompareTag("Toilet"))
                     {
-
+                        hit.collider.GetComponent<Toilet>().playSound();
                     }
                 }
             }
