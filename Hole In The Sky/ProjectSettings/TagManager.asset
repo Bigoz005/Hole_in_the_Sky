@@ -7,6 +7,13 @@ TagManager:
   - FlashLight
   - Door
   - Key
+  - PadLock
+  - Chest
+  - Toilet
+  - Sink
+  - Bathtub
+  - DeskDoor
+  - PianoKey
   layers:
   - Default
   - TransparentFX

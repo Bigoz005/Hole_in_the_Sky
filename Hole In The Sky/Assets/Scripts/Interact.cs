@@ -7,7 +7,7 @@ public class Interact : MonoBehaviour
 {
     public string interactButton;
 
-    public float interactDistance = 3f;
+    public float interactDistance = 5f;
     public LayerMask interactLayer;
     public Image interactIcon;
 
@@ -45,6 +45,26 @@ public class Interact : MonoBehaviour
                     else if (hit.collider.CompareTag("Key"))
                     {
                         hit.collider.GetComponent<Key>().UnlockDoor();
+                    }
+                    else if (hit.collider.CompareTag("PadLock"))
+                    {
+                        hit.collider.GetComponent<PadLock>().ShowSafeCanvas();
+                    }
+                    else if (hit.collider.CompareTag("PianoKey"))
+                    {
+
+                    }
+                    else if (hit.collider.CompareTag("Sink"))
+                    {
+
+                    }
+                    else if (hit.collider.CompareTag("Bathtub"))
+                    {
+
+                    }
+                    else if (hit.collider.CompareTag("Toilet"))
+                    {
+
                     }
                 }
             }
