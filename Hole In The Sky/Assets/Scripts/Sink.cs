@@ -28,7 +28,7 @@ public class Sink : MonoBehaviour
 
     IEnumerator WaitForMusicEnd()
     {
-        yield return new WaitForSeconds(audioClip.length);
+        yield return new WaitForSeconds(audioClip.length-1);
         sinkWater.Stop();
     }
 }
