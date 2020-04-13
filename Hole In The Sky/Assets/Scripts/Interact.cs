@@ -68,7 +68,7 @@ public class Interact : MonoBehaviour
                     }
                     else if (hit.collider.CompareTag("Toilet"))
                     {
-                        hit.collider.GetComponent<Toilet>().playSound();
+                        hit.collider.GetComponent<Toilet>().startWater();
                     }
                 }
             }

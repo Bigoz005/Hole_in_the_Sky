@@ -7,13 +7,28 @@ public class Toilet : MonoBehaviour
     private AudioSource audioSource;
     public AudioClip audioClip;
 
+    private ParticleSystem toiletWater;
+    public GameObject toiletWaterObj;
+
     private void Start()
     {
+        toiletWater = toiletWaterObj.GetComponent("ParticleSystem") as ParticleSystem;
         audioSource = GetComponent<AudioSource>();
     }
 
-    public void playSound()
+    public void startWater()
     {
-        audioSource.PlayOneShot(audioClip);
+        if (toiletWater != null)
+        {
+            toiletWater.Play();
+            audioSource.PlayOneShot(audioClip);
+            StartCoroutine("WaitForMusicEnd");
+        }
+    }
+
+    IEnumerator WaitForMusicEnd()
+    {
+        yield return new WaitForSeconds(audioClip.length-5);
+        toiletWater.Stop();
     }
 }
