@@ -7,13 +7,28 @@ public class Sink : MonoBehaviour
     private AudioSource audioSource;
     public AudioClip audioClip;
 
+    private ParticleSystem sinkWater;
+    public GameObject sinkWaterObj;
+
     private void Start()
     {
+        sinkWater = sinkWaterObj.GetComponent("ParticleSystem") as ParticleSystem;
         audioSource = GetComponent<AudioSource>();
     }
 
-    public void playSound()
+    public void startWater()
     {
-        audioSource.PlayOneShot(audioClip);
+        if (sinkWater != null)
+        {
+            sinkWater.Play();
+            audioSource.PlayOneShot(audioClip);
+            StartCoroutine("WaitForMusicEnd");
+        }
+    }
+
+    IEnumerator WaitForMusicEnd()
+    {
+        yield return new WaitForSeconds(audioClip.length);
+        sinkWater.Stop();
     }
 }
