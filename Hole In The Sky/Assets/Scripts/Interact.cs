@@ -65,6 +65,7 @@ public class Interact : MonoBehaviour
                             hit.collider.GetComponent<Note>().ShowNoteImage();
                             break;
                         case "PianoKey":
+                            hit.collider.GetComponent<PianoKey>().playSound();
                             break;
                     }
                 }
