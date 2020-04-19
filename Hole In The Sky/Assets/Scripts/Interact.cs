@@ -38,37 +38,34 @@ public class Interact : MonoBehaviour
 
                 if (Input.GetButtonDown(interactButton))
                 {
-                    if (hit.collider.CompareTag("Door"))
+                    switch (hit.collider.gameObject.tag)
                     {
-                        hit.collider.GetComponent<Door>().ChangeDoorState();
-                    }
-                    else if (hit.collider.CompareTag("Key"))
-                    {
-                        hit.collider.GetComponent<Key>().UnlockDoor();
-                    }
-                    else if (hit.collider.CompareTag("PadLock"))
-                    {
-                        hit.collider.GetComponent<PadLock>().ShowSafeCanvas();
-                    }
-                    else if (hit.collider.CompareTag("Chest"))
-                    {
-                        hit.collider.GetComponentInChildren<ChestDoor>().ChangeDoorState();
-                    }
-                    else if (hit.collider.CompareTag("PianoKey"))
-                    {
-
-                    }
-                    else if (hit.collider.CompareTag("Sink"))
-                    {
-                        hit.collider.GetComponent<Sink>().startWater();
-                    }
-                    else if (hit.collider.CompareTag("Bathtub"))
-                    {
-                        hit.collider.GetComponent<Bathtub>().startWater();
-                    }
-                    else if (hit.collider.CompareTag("Toilet"))
-                    {
-                        hit.collider.GetComponent<Toilet>().startWater();
+                        case "Door":
+                            hit.collider.GetComponent<Door>().ChangeDoorState();
+                            break;
+                        case "Key":
+                            hit.collider.GetComponent<Key>().UnlockDoor();
+                            break;
+                        case "PadLock":
+                            hit.collider.GetComponent<PadLock>().ShowSafeCanvas();
+                            break;
+                        case "Chest":
+                            hit.collider.GetComponentInChildren<ChestDoor>().ChangeDoorState();
+                            break;
+                        case "Sink":
+                            hit.collider.GetComponent<Sink>().startWater();
+                            break;
+                        case "Bathtub":
+                            hit.collider.GetComponent<Bathtub>().startWater();
+                            break;
+                        case "Toilet":
+                            hit.collider.GetComponent<Toilet>().startWater();
+                            break;
+                        case "Note":
+                            hit.collider.GetComponent<Note>().ShowNoteImage();
+                            break;
+                        case "PianoKey":
+                            break;
                     }
                 }
             }
