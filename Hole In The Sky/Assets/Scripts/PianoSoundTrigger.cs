@@ -114,7 +114,7 @@ public class PianoSoundTrigger : MonoBehaviour
 
     public IEnumerator WaitForStart()
     {
-        yield return new WaitForSeconds(scarySound.length / 2);
+        yield return new WaitForSeconds(scarySound.length / 4);
         readyToPlay = true;
         i++;
     }
