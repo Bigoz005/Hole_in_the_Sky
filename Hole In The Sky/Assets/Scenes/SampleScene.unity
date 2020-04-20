@@ -6390,6 +6390,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2310044, guid: 074728566132335428608c1b7e7f1f14, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 53f62d5e812040d41987d6c3bcade397, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 074728566132335428608c1b7e7f1f14, type: 3}
 --- !u!1 &438783775
@@ -7172,8 +7176,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.28824037, y: 1, z: 7.6825643}
-  m_Center: {x: -10.200694, y: 0, z: 0.23568115}
+  m_Size: {x: 0.28824037, y: 1, z: 6.7667093}
+  m_Center: {x: -10.200695, y: 0, z: -0.22224174}
 --- !u!33 &700485080
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -7224,8 +7228,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 26.76787, y: 1, z: 0.072730765}
-  m_Center: {x: -23.881754, y: 0, z: 4.086886}
+  m_Size: {x: 26.76787, y: 1, z: 0.054100234}
+  m_Center: {x: -23.881754, y: 0, z: 3.2004158}
 --- !u!65 &703903759
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7316,6 +7320,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: appartment
       objectReference: {fileID: 0}
+    - target: {fileID: -2797809972704814648, guid: 86b517f946fd1d9459c1724335f8f1d5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3180010876324424844, guid: 86b517f946fd1d9459c1724335f8f1d5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3176679334682337215, guid: 86b517f946fd1d9459c1724335f8f1d5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5435905921455919960, guid: 86b517f946fd1d9459c1724335f8f1d5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -8597594807002118041, guid: 86b517f946fd1d9459c1724335f8f1d5,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -7401,11 +7425,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: -2797809972704814648, guid: 86b517f946fd1d9459c1724335f8f1d5,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: -2085558663860069008, guid: 86b517f946fd1d9459c1724335f8f1d5,
         type: 3}
       propertyPath: m_Enabled
@@ -7430,21 +7449,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3176679334682337215, guid: 86b517f946fd1d9459c1724335f8f1d5,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3180010876324424844, guid: 86b517f946fd1d9459c1724335f8f1d5,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5435905921455919960, guid: 86b517f946fd1d9459c1724335f8f1d5,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7236029596611135979, guid: 86b517f946fd1d9459c1724335f8f1d5,
         type: 3}
@@ -16328,6 +16332,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Frame
       objectReference: {fileID: 0}
+    - target: {fileID: 2389776, guid: 2f1666ad9b7fdd7459a360619d6ccffd, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c44cfcebac0072649a19902f9cc418ae, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f1666ad9b7fdd7459a360619d6ccffd, type: 3}
 --- !u!1 &1530071488 stripped
@@ -29883,7 +29891,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8296172667700868362}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.325939, y: -0.22000003, z: -8.159}
+  m_LocalPosition: {x: -15.372, y: -0.22000003, z: -8.159}
   m_LocalScale: {x: 1, y: 1, z: 0.91}
   m_Children:
   - {fileID: 429129761}
