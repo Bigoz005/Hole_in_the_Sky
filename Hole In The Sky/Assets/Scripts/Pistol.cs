@@ -5,10 +5,14 @@ using UnityEngine;
 public class Pistol : MonoBehaviour
 {
     public int dmg = 15;
-    public int ammo = 22;
+    public int ammo = 11;
+    public int cardridges = 3;
     public float range = 50f;
     public float smoothHammer = 0.5f;
     public float angleHammer = -60.0f;
+    private bool isReadyToShoot = true;
+
+    public GameObject enemy;
 
     public float smoothSlider = 20f;
     public float smoothTrigger = 20f;
@@ -22,7 +26,6 @@ public class Pistol : MonoBehaviour
     private Transform slider;
     private Transform trigger;
     private bool isShooting = false;
-    private bool isTrigger = false;
 
     private AudioSource audioSource;
     public AudioClip shootSound;
@@ -42,43 +45,64 @@ public class Pistol : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (isReadyToShoot)
         {
-            isTrigger = false;
-            if (ammo > 0)
+            if (Input.GetButtonDown("Reload"))
             {
-                Shoot();
+                if (cardridges > 0)
+                {
+                    ammo = 11;
+                    cardridges--;
+                }
+            }
+
+            if (Input.GetButtonDown("Fire1"))
+            {
+                isReadyToShoot = false;
+
+                StartCoroutine("WaitForShoot");
+
+                if (ammo > 0)
+                {
+                    Shoot();
+                    StartCoroutine("WaitForHammer");
+                }
+                else
+                {
+                    audioSource.PlayOneShot(noAmmoSound);
+                }
+                trigger.localPosition = new Vector3(trigger.localPosition.x - triggerMove, trigger.localPosition.y, trigger.localPosition.z);
+                StartCoroutine("WaitForTrigger");
+            }
+
+            if (isShooting)
+            {
+                Quaternion targetRotationHammer = Quaternion.Euler(0, angleHammer, 0);
+                hammer.localRotation = Quaternion.Slerp(transform.localRotation, targetRotationHammer, smoothHammer * Time.deltaTime);
             }
             else
             {
-                audioSource.PlayOneShot(noAmmoSound);
+                Quaternion targetRotationHammer = Quaternion.Euler(0, 0, 0);
+                hammer.localRotation = Quaternion.Slerp(transform.localRotation, targetRotationHammer, 30f * Time.deltaTime);
             }
-            trigger.localPosition = new Vector3(trigger.localPosition.x - triggerMove, trigger.localPosition.y, trigger.localPosition.z);
-            StartCoroutine("WaitForTrigger");
         }
-
-        if (isShooting)
-        {
-            Quaternion targetRotationHammer = Quaternion.Euler(0, angleHammer, 0);
-            hammer.localRotation = Quaternion.Slerp(transform.localRotation, targetRotationHammer, smoothHammer * Time.deltaTime);
-        }
-        else
-        {
-            Quaternion targetRotationHammer = Quaternion.Euler(0, 0, 0);
-            hammer.localRotation = Quaternion.Slerp(transform.localRotation, targetRotationHammer, 20f * Time.deltaTime);
-        }
-
     }
 
     void Shoot()
     {
         isShooting = true;
+    }
+
+    public IEnumerator WaitForHammer()
+    {
+        yield return new WaitForSeconds(noAmmoSound.length / 8);
+        isShooting = false;
         StartCoroutine("WaitForShootEnd");
     }
 
     public IEnumerator WaitForShootEnd()
     {
-        yield return new WaitForSeconds(shootSound.length / 4);
+        yield return new WaitForSeconds(shootSound.length / 5);
 
         Ray ray = new Ray(mainCamera.position, mainCamera.forward);
         RaycastHit hit;
@@ -87,25 +111,35 @@ public class Pistol : MonoBehaviour
         {
             if (hit.collider.CompareTag("Enemy"))
             {
-                //Dmg Enemy
+                if (enemy != null) { 
+                    enemy.GetComponent<Enemy>().Hp -= dmg;
+                }
             }
         }
+
         audioSource.PlayOneShot(shootSound);
+
         slider.localPosition = new Vector3(slider.localPosition.x - sliderMove, slider.localPosition.y, slider.localPosition.z);
         StartCoroutine("WaitForSlider");
         ammo--;
-        isShooting = false;
     }
 
     public IEnumerator WaitForSlider()
     {
-        yield return new WaitForSeconds(shootSound.length / 4);
+        yield return new WaitForSeconds(noAmmoSound.length / 4);
         slider.localPosition = Vector3.MoveTowards(trigger.localPosition, new Vector3(slider.localPosition.x + sliderMove, slider.localPosition.y, slider.localPosition.z), smoothSlider * Time.deltaTime);
 
     }
+
     public IEnumerator WaitForTrigger()
     {
-        yield return new WaitForSeconds(noAmmoSound.length / 2);
+        yield return new WaitForSeconds(noAmmoSound.length / 5);
         trigger.localPosition = Vector3.MoveTowards(trigger.localPosition, new Vector3(trigger.localPosition.x + triggerMove, trigger.localPosition.y, trigger.localPosition.z), smoothTrigger * Time.deltaTime);
+    }
+
+    public IEnumerator WaitForShoot()
+    {
+        yield return new WaitForSecondsRealtime(0.3f);
+        isReadyToShoot = true;
     }
 }
