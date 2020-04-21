@@ -17,6 +17,8 @@ TagManager:
   - ChestDoor
   - Fire
   - Note
+  - Pistol
+  - Enemy
   layers:
   - Default
   - TransparentFX

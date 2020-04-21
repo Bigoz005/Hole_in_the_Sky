@@ -9,6 +9,7 @@ public class PianoSoundTrigger : MonoBehaviour
     public AudioClip scarySound;
     public Light flashLight;
     public Light pianoLight;
+
     private bool hasPlayed;
 
     private bool exit;

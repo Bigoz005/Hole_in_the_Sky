@@ -67,6 +67,9 @@ public class Interact : MonoBehaviour
                         case "PianoKey":
                             hit.collider.GetComponent<PianoKey>().playSound();
                             break;
+                        case "Pistol":
+                            hit.collider.GetComponent<PistolPickup>().PickupPistol();
+                            break;
                     }
                 }
             }
