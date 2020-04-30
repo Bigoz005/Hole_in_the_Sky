@@ -28,7 +28,7 @@ public class Toilet : MonoBehaviour
 
     IEnumerator WaitForMusicEnd()
     {
-        yield return new WaitForSeconds(audioClip.length-3);
+        yield return new WaitForSeconds(audioClip.length - 3);
         toiletWater.Stop();
     }
 }
