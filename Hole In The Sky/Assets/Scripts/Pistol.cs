@@ -11,9 +11,7 @@ public class Pistol : MonoBehaviour
     public float smoothHammer = 0.5f;
     public float angleHammer = -60.0f;
     private bool isReadyToShoot = true;
-
-    public GameObject enemy;
-
+    
     public float smoothSlider = 20f;
     public float smoothTrigger = 20f;
     public float sliderMove = 0.1f;
@@ -111,9 +109,7 @@ public class Pistol : MonoBehaviour
         {
             if (hit.collider.CompareTag("Enemy"))
             {
-                if (enemy != null) { 
-                    enemy.GetComponent<Enemy>().Hp -= dmg;
-                }
+                hit.collider.GetComponent<Enemy>().TakeDamage(dmg);
             }
         }
 

@@ -4,19 +4,44 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public float Hp = 100;
+    public int maxHp = 100;
+    private int currentHp;
+
+    private Animator animator;
     // Start is called before the first frame update
     void Start()
     {
-        
+        currentHp = maxHp;
+        animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void TakeDamage(int _damage)
     {
-        if(Hp <= 0)
+        currentHp -= _damage;
+        animator.SetTrigger("DamageTrigger");
+
+        if (currentHp <= 0)
         {
-            Destroy(gameObject);
+            Die();
         }
+    }
+
+    public void Die()
+    {
+        animator.SetTrigger("DyingTrigger");
+        StartCoroutine("WaitForAnimationEnd");
+    }
+
+    public IEnumerator WaitForAnimationEnd()
+    {
+        yield return new WaitForSecondsRealtime(1);
+        animator.StopPlayback();
+        StartCoroutine("WaitForDestroy");
+    }
+
+    public IEnumerator WaitForDestroy()
+    {
+        yield return new WaitForSecondsRealtime(1);
+        Destroy(gameObject);
     }
 }
