@@ -19,6 +19,7 @@ TagManager:
   - Note
   - Pistol
   - Enemy
+  - EnemyHead
   layers:
   - Default
   - TransparentFX

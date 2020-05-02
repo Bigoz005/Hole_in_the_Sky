@@ -15,6 +15,19 @@ public class Enemy : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
+    public void TakeDamageHeadshot(int _damage)
+    {
+        currentHp -= _damage * 3;
+        if (currentHp <= 0)
+        {
+            Die();
+        }
+        else
+        {
+            animator.SetTrigger("DamageTrigger");
+        }
+    }
+
     public void TakeDamage(int _damage)
     {
         currentHp -= _damage;

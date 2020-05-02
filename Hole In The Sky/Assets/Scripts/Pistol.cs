@@ -111,6 +111,11 @@ public class Pistol : MonoBehaviour
             {
                 hit.collider.GetComponent<Enemy>().TakeDamage(dmg);
             }
+
+            if (hit.collider.CompareTag("EnemyHead"))
+            {
+                hit.collider.gameObject.GetComponentInParent<Enemy>().TakeDamageHeadshot(dmg);
+            }
         }
 
         audioSource.PlayOneShot(shootSound);
