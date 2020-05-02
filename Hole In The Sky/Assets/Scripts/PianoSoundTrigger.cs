@@ -52,11 +52,11 @@ public class PianoSoundTrigger : MonoBehaviour
             {
                 if (i % 2 == 0)
                 {
-                    StartCoroutine("WaitHalfQuater", "C8");
+                    StartCoroutine("WaitHalfQuater", "C7");
                 }
                 else if (i % 3 == 0)
                 {
-                    StartCoroutine("WaitQuater", "A#6");
+                    StartCoroutine("WaitQuater", "A#3");
                 }
                 else if (i % 4 == 0)
                 {
@@ -87,7 +87,7 @@ public class PianoSoundTrigger : MonoBehaviour
                 }
                 else if (i % 3 == 0)
                 {
-                    StartCoroutine("WaitHalfQuater", "F#6");
+                    StartCoroutine("WaitHalfQuater", "F#4");
                 }
                 else if (i % 4 == 0)
                 {
@@ -103,7 +103,7 @@ public class PianoSoundTrigger : MonoBehaviour
                 }
                 else if (i % 9 == 0)
                 {
-                    StartCoroutine("WaitHalfQuater", "C6");
+                    StartCoroutine("WaitHalfQuater", "C1");
                 }
                 else
                 {
@@ -115,7 +115,7 @@ public class PianoSoundTrigger : MonoBehaviour
 
     public IEnumerator WaitForStart()
     {
-        yield return new WaitForSeconds(scarySound.length / 4);
+        yield return new WaitForSeconds(scarySound.length / 5);
         readyToPlay = true;
         i++;
     }
@@ -127,7 +127,7 @@ public class PianoSoundTrigger : MonoBehaviour
         pianoKey.GetComponent<PianoKey>().playSound();
         yield return new WaitForSeconds(pianoKey.GetComponent<PianoKey>().pianoKeySound.length);
         i++;
-        if (i < 70)
+        if (i < 41)
         {
             readyToPlay = true;
         }
@@ -138,9 +138,9 @@ public class PianoSoundTrigger : MonoBehaviour
         Transform pianoKey = pianoKeys["key" + pianoKeyName];
         readyToPlay = false;
         pianoKey.GetComponent<PianoKey>().playSound();
-        yield return new WaitForSeconds(pianoKey.GetComponent<PianoKey>().pianoKeySound.length / 2);
+        yield return new WaitForSeconds(pianoKey.GetComponent<PianoKey>().pianoKeySound.length / 6);
         i++;
-        if (i < 70)
+        if (i < 41)
         {
             readyToPlay = true;
         }
@@ -151,9 +151,9 @@ public class PianoSoundTrigger : MonoBehaviour
         Transform pianoKey = pianoKeys["key" + pianoKeyName];
         readyToPlay = false;
         pianoKey.GetComponent<PianoKey>().playSound();
-        yield return new WaitForSeconds(pianoKey.GetComponent<PianoKey>().pianoKeySound.length / 4);
+        yield return new WaitForSeconds(pianoKey.GetComponent<PianoKey>().pianoKeySound.length / 8);
         i++;
-        if (i < 70)
+        if (i < 41)
         {
             readyToPlay = true;
         }
@@ -164,9 +164,9 @@ public class PianoSoundTrigger : MonoBehaviour
         Transform pianoKey = pianoKeys["key" + pianoKeyName];
         readyToPlay = false;
         pianoKey.GetComponent<PianoKey>().playSound();
-        yield return new WaitForSeconds(pianoKey.GetComponent<PianoKey>().pianoKeySound.length / 8);
+        yield return new WaitForSeconds(pianoKey.GetComponent<PianoKey>().pianoKeySound.length / 12);
         i++;
-        if (i < 70)
+        if (i < 41)
         {
             readyToPlay = true;
         }

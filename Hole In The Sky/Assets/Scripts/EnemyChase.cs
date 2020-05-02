@@ -9,6 +9,9 @@ public class EnemyChase : MonoBehaviour
     public Transform target;
     private Animator myAnimator;
 
+    public int attackDamage = 20;
+    private PlayerHealth playerHealth;
+
     public bool chaseTarget = true;
     public bool searchTarget = true;
     public bool attackTarget = true;
@@ -26,12 +29,22 @@ public class EnemyChase : MonoBehaviour
         myAgent = GetComponent<NavMeshAgent>();
         myAgent.stoppingDistance = stoppingDistance;
         attackCooldown = Time.time;
+
+        playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        ChaseTarget();
+        if(myAnimator.GetBool("isDying") == true)
+        {
+            myAgent.enabled = false;
+        }
+        else
+        {
+            ChaseTarget();
+        }
     }
 
     void ChaseTarget()
@@ -64,7 +77,7 @@ public class EnemyChase : MonoBehaviour
     {
         if(Time.time > attackCooldown)
         {
-            Debug.Log("Attack");
+            playerHealth.TakeDamage(attackDamage);
             myAnimator.SetTrigger("AttackTrigger");
             attackCooldown = Time.time + delayBetweenAttacks;
         }

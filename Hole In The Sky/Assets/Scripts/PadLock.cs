@@ -46,7 +46,7 @@ public class PadLock : MonoBehaviour
         safeCanvas.enabled = true;
 
         playerObject.GetComponent<FirstPersonController>().enabled = false;
-        playerObject.transform.GetChild(0).GetChild(3).GetComponentInChildren<Pistol>().enabled = false;
+        playerObject.transform.GetChild(0).GetChild(2).GetComponentInChildren<Pistol>().enabled = false;
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
@@ -60,7 +60,7 @@ public class PadLock : MonoBehaviour
         safeCanvas.enabled = false;
 
         playerObject.GetComponent<FirstPersonController>().enabled = true;
-        playerObject.transform.GetChild(0).GetChild(3).GetComponentInChildren<Pistol>().enabled = true;
+        playerObject.transform.GetChild(0).GetChild(2).GetComponentInChildren<Pistol>().enabled = true;
     }
 
     public void IncreaseNumber(int _number)

@@ -18,30 +18,32 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int _damage)
     {
         currentHp -= _damage;
-        animator.SetTrigger("DamageTrigger");
-
         if (currentHp <= 0)
         {
             Die();
+        }
+        else
+        {
+            animator.SetTrigger("DamageTrigger");
         }
     }
 
     public void Die()
     {
         animator.SetTrigger("DyingTrigger");
+        animator.SetBool("isDying", true);
         StartCoroutine("WaitForAnimationEnd");
     }
 
     public IEnumerator WaitForAnimationEnd()
     {
         yield return new WaitForSecondsRealtime(1);
-        animator.StopPlayback();
         StartCoroutine("WaitForDestroy");
     }
 
     public IEnumerator WaitForDestroy()
     {
         yield return new WaitForSecondsRealtime(1);
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 }
