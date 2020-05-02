@@ -57,6 +57,8 @@ public class Enemy : MonoBehaviour
     public IEnumerator WaitForDestroy()
     {
         yield return new WaitForSecondsRealtime(1);
+        gameObject.GetComponent<CapsuleCollider>().enabled = false;
+        gameObject.GetComponentInChildren<CapsuleCollider>().enabled = false;
         //Destroy(gameObject);
     }
 }
