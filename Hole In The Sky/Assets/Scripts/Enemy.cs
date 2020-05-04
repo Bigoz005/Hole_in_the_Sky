@@ -46,19 +46,19 @@ public class Enemy : MonoBehaviour
         animator.SetTrigger("DyingTrigger");
         animator.SetBool("isDying", true);
         StartCoroutine("WaitForAnimationEnd");
+        gameObject.GetComponent<CapsuleCollider>().enabled = false;
+        gameObject.GetComponentInChildren<CapsuleCollider>().enabled = false;
     }
 
     public IEnumerator WaitForAnimationEnd()
     {
         yield return new WaitForSecondsRealtime(1);
-        StartCoroutine("WaitForDestroy");
+        //StartCoroutine("WaitForDestroy");
     }
 
     public IEnumerator WaitForDestroy()
     {
         yield return new WaitForSecondsRealtime(1);
-        gameObject.GetComponent<CapsuleCollider>().enabled = false;
-        gameObject.GetComponentInChildren<CapsuleCollider>().enabled = false;
         //Destroy(gameObject);
     }
 }

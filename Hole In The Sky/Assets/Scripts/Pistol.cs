@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Pistol : MonoBehaviour
 {
@@ -11,7 +12,8 @@ public class Pistol : MonoBehaviour
     public float smoothHammer = 0.5f;
     public float angleHammer = -60.0f;
     private bool isReadyToShoot = true;
-    
+    public Text ammoText;
+
     public float smoothSlider = 20f;
     public float smoothTrigger = 20f;
     public float sliderMove = 0.1f;
@@ -27,6 +29,7 @@ public class Pistol : MonoBehaviour
 
     private AudioSource audioSource;
     public AudioClip shootSound;
+    public AudioClip reloadSound;
     public AudioClip noAmmoSound;
 
     // Start is called before the first frame update
@@ -39,10 +42,13 @@ public class Pistol : MonoBehaviour
         trigger = transform.Find("Handgun_M1911A (Model)").transform.Find("Trigger").transform;
         firstPositionSlider = slider.position;
         firstPositionTrigger = trigger.position;
+        ammo = 11;
+        cardridges = 3;
     }
 
     void Update()
     {
+        ammoText.text = ammo + " / " + (cardridges * 11).ToString();
         if (isReadyToShoot)
         {
             if (Input.GetButtonDown("Reload"))
@@ -51,6 +57,7 @@ public class Pistol : MonoBehaviour
                 {
                     ammo = 11;
                     cardridges--;
+                    audioSource.PlayOneShot(reloadSound);
                 }
             }
 

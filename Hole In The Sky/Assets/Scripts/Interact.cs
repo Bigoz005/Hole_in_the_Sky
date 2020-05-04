@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class Interact : MonoBehaviour
 {
     public string interactButton;
-
     public float interactDistance = 5f;
     public LayerMask interactLayer;
     public Image interactIcon;
@@ -69,6 +68,10 @@ public class Interact : MonoBehaviour
                             break;
                         case "Pistol":
                             hit.collider.GetComponent<PistolPickup>().PickupPistol();
+                            break;
+                        case "PickupFlashLight":
+                            GetComponentInChildren<Flashlight>().enabled = true;
+                            Destroy(hit.collider.gameObject);
                             break;
                     }
                 }

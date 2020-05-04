@@ -32,8 +32,10 @@ public class PlayerHealth : MonoBehaviour
     {
         Debug.Log("U ded lul");
     }
+    
     //gdy otrzymuje obrazenia kamera zaczyna zmniejszac
     //swoje pole widzenia i daje czerwona poswiate
     //oraz jezeli sie da rozmazuje obraz
     
+
 }
