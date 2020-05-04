@@ -49,15 +49,19 @@ public class Pistol : MonoBehaviour
     void Update()
     {
         ammoText.text = ammo + " / " + (cardridges * 11).ToString();
+
         if (isReadyToShoot)
         {
             if (Input.GetButtonDown("Reload"))
             {
                 if (cardridges > 0)
                 {
-                    ammo = 11;
-                    cardridges--;
-                    audioSource.PlayOneShot(reloadSound);
+                    if (ammo != 11)
+                    {
+                        ammo = 11;
+                        cardridges--;
+                        audioSource.PlayOneShot(reloadSound);
+                    }
                 }
             }
 
@@ -151,3 +155,4 @@ public class Pistol : MonoBehaviour
         isReadyToShoot = true;
     }
 }
+
