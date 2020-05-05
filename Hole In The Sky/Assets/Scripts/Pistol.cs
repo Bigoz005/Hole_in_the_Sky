@@ -21,6 +21,10 @@ public class Pistol : MonoBehaviour
     private Vector3 firstPositionSlider;
     private Vector3 firstPositionTrigger;
 
+    private GameObject light;
+    private GameObject smoke;
+    private GameObject explosion;
+
     private Transform mainCamera;
     private Transform hammer;
     private Transform slider;
@@ -37,6 +41,9 @@ public class Pistol : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera").transform;
+        smoke = transform.GetChild(0).gameObject;
+        explosion = transform.GetChild(1).gameObject;
+        light = transform.GetChild(2).gameObject;
         hammer = transform.Find("Handgun_M1911A (Model)").transform.Find("Hammer").transform;
         slider = transform.Find("Handgun_M1911A (Model)").transform.Find("Slider").transform;
         trigger = transform.Find("Handgun_M1911A (Model)").transform.Find("Trigger").transform;
@@ -44,6 +51,9 @@ public class Pistol : MonoBehaviour
         firstPositionTrigger = trigger.position;
         ammo = 11;
         cardridges = 3;
+        light.gameObject.SetActive(false);
+        smoke.GetComponent<ParticleSystem>().Stop();
+        explosion.GetComponent<ParticleSystem>().Stop();
     }
 
     void Update()
@@ -130,7 +140,9 @@ public class Pistol : MonoBehaviour
         }
 
         audioSource.PlayOneShot(shootSound);
-
+        smoke.GetComponent<ParticleSystem>().Play();
+        explosion.GetComponent<ParticleSystem>().Play();
+        light.gameObject.SetActive(true);
         slider.localPosition = new Vector3(slider.localPosition.x - sliderMove, slider.localPosition.y, slider.localPosition.z);
         StartCoroutine("WaitForSlider");
         ammo--;
@@ -139,6 +151,7 @@ public class Pistol : MonoBehaviour
     public IEnumerator WaitForSlider()
     {
         yield return new WaitForSeconds(noAmmoSound.length / 4);
+        light.gameObject.SetActive(false);
         slider.localPosition = Vector3.MoveTowards(trigger.localPosition, new Vector3(slider.localPosition.x + sliderMove, slider.localPosition.y, slider.localPosition.z), smoothSlider * Time.deltaTime);
 
     }
