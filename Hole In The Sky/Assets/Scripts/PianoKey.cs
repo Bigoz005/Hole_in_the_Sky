@@ -26,6 +26,15 @@ public class PianoKey : MonoBehaviour
         }
     }
 
+    public void playSoundMenu()
+    {
+        if (!isPressed)
+        {
+            isPressed = true;
+            StartCoroutine("WaitForEnd");
+        }
+    }
+
     public void Update()
     {
         if (isPressed)
