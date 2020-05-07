@@ -29,10 +29,6 @@ public class Settings : MonoBehaviour
         RenderSettings.skybox.color = new Color(value, value, value, 1.0f);
         RenderSettings.reflectionIntensity = value;
         RenderSettings.ambientIntensity = value;
-        /*RenderSettings.ambientEquatorColor = new Color(value, value, value, 1.0f);
-        RenderSettings.ambientGroundColor = new Color(value, value, value, 1.0f);
-        RenderSettings.ambientSkyColor = new Color(value, value, value, 1.0f);
-        */
     }
 
     public void ChangeShadows()
@@ -74,10 +70,12 @@ public class Settings : MonoBehaviour
         sound = !sound;
         if (sound)
         {
+            AudioListener.volume = 1.0f;
             soundText.GetComponentInChildren<Text>().text = "Sounds: 1";
         }
         else
         {
+            AudioListener.volume = 0f;
             soundText.GetComponentInChildren<Text>().text = "Sounds: 0";
         }
     }
