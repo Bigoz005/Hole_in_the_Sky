@@ -26,6 +26,13 @@ public class Settings : MonoBehaviour
     private void Update()
     {
         RenderSettings.ambientLight = new Color(value, value, value, 1.0f);
+        RenderSettings.skybox.color = new Color(value, value, value, 1.0f);
+        RenderSettings.reflectionIntensity = value;
+        RenderSettings.ambientIntensity = value;
+        /*RenderSettings.ambientEquatorColor = new Color(value, value, value, 1.0f);
+        RenderSettings.ambientGroundColor = new Color(value, value, value, 1.0f);
+        RenderSettings.ambientSkyColor = new Color(value, value, value, 1.0f);
+        */
     }
 
     public void ChangeShadows()
@@ -33,24 +40,24 @@ public class Settings : MonoBehaviour
         if (QualitySettings.shadows == ShadowQuality.Disable && !wasChanged)
         {
             QualitySettings.shadows = ShadowQuality.All;
+            QualitySettings.shadowmaskMode = ShadowmaskMode.DistanceShadowmask;
             shadowText.GetComponentInChildren<Text>().text = "Shadows: 2";
-            Debug.Log("2");
             wasChanged = true;
         }
 
         if (QualitySettings.shadows == ShadowQuality.All && !wasChanged)
         {
             QualitySettings.shadows = ShadowQuality.HardOnly;
+            QualitySettings.shadowmaskMode = ShadowmaskMode.Shadowmask;
             shadowText.GetComponentInChildren<Text>().text = "Shadows: 1";
-            Debug.Log("1");
             wasChanged = true;
         }
 
         if (QualitySettings.shadows == ShadowQuality.HardOnly && !wasChanged)
         {
             QualitySettings.shadows = ShadowQuality.Disable;
+            QualitySettings.shadowmaskMode = ShadowmaskMode.Shadowmask;
             shadowText.GetComponentInChildren<Text>().text = "Shadows: 0";
-            Debug.Log("0");
             wasChanged = true;
         }
 
@@ -60,7 +67,6 @@ public class Settings : MonoBehaviour
     public void ChangeBrightness()
     {
         value = slider.value;
-        Debug.Log(value);
     }
 
     public void ChangeSound()

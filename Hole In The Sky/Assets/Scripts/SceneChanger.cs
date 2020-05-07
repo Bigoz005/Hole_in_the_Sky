@@ -12,6 +12,9 @@ public class SceneChanger : MonoBehaviour
     {
         settingsCanvas.SetActive(false);
         mainMenuCanvas.SetActive(true);
+        RenderSettings.ambientLight = new Color(0.5f, 0.5f, 0.5f, 1.0f);
+        RenderSettings.skybox.color = new Color(0.5f, 0.5f, 0.5f, 1.0f);
+        QualitySettings.shadows = ShadowQuality.All;
     }
 
     public void ChangeScene(string sceneName)
