@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class SceneChanger : MonoBehaviour
 {
@@ -10,8 +11,10 @@ public class SceneChanger : MonoBehaviour
 
     public void Start()
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         settingsCanvas.SetActive(false);
-        mainMenuCanvas.SetActive(true);
+        mainMenuCanvas.SetActive(true);       
         RenderSettings.ambientLight = new Color(0.5f, 0.5f, 0.5f, 1.0f);
         RenderSettings.skybox.color = new Color(0.5f, 0.5f, 0.5f, 1.0f);
         QualitySettings.shadows = ShadowQuality.All;

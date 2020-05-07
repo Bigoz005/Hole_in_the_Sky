@@ -56,15 +56,4 @@ public class Note : MonoBehaviour
             GetComponent<AudioSource>().PlayOneShot(putdownSound);
         }
     }
-
-    void Update()
-    {
-        if (isActive)
-        {
-            if (Input.GetButtonDown("Cancel"))
-            {
-                HideNoteImage();
-            }
-        }
-    }
 }

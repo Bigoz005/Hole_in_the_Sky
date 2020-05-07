@@ -39,6 +39,8 @@ public class PadLock : MonoBehaviour
         safeCanvas.enabled = false;
         pistolObject.SetActive(false);
         audioSource = GetComponent<AudioSource>();
+        ShowSafeCanvas();
+        HideSafeCanvas();
     }
 
     public void ShowSafeCanvas()

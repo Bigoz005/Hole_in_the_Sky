@@ -25,6 +25,11 @@ public class Interact : MonoBehaviour
         Ray ray = new Ray(transform.position, transform.forward);
         RaycastHit hit;
 
+        if (Input.GetButtonDown("Cancel"))
+        {
+            
+        }
+
         // checks hits of ray within interactDistance in the interactLayer
         if (Physics.Raycast(ray, out hit, interactDistance, interactLayer))
         {
