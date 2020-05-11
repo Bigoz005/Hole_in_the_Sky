@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityStandardAssets.Characters.FirstPerson;
 
@@ -9,14 +10,14 @@ public class MenuInGame : MonoBehaviour
     public Canvas mainMenuCanvas;
     public Canvas settingsCanvas;
     public GameObject playerObject;
-    private FirstPersonController freezePlayer;
+    private FirstPersonController playerController;
     private Pistol pistol;
     private bool isGamePaused;
 
     // Start is called before the first frame update
     void Start()
     {
-        freezePlayer = playerObject.GetComponent<FirstPersonController>();
+        playerController = playerObject.GetComponent<FirstPersonController>();
         pistol = playerObject.transform.GetChild(0).GetChild(2).GetComponentInChildren<Pistol>();
         isGamePaused = false;
         CloseCanvas();
@@ -25,7 +26,7 @@ public class MenuInGame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Cancel"))
+        if (Input.GetKeyDown(KeyCode.P))
         {
             if (isGamePaused)
             {
@@ -40,11 +41,7 @@ public class MenuInGame : MonoBehaviour
 
     public void GoToSettings()
     {
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-
-        freezePlayer.enabled = false;
-        pistol.enabled = false;
+        PrepareForMenu();
 
         settingsCanvas.enabled = true;
         mainMenuCanvas.enabled = false;
@@ -53,13 +50,7 @@ public class MenuInGame : MonoBehaviour
 
     public void GoToMainMenu()
     {
-        Time.timeScale = 0.0f;
-
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-
-        freezePlayer.enabled = false;
-        pistol.enabled = false;
+        PrepareForMenu();
 
         mainMenuCanvas.enabled = true;
         settingsCanvas.enabled = false;
@@ -68,18 +59,39 @@ public class MenuInGame : MonoBehaviour
 
     public void CloseCanvas()
     {
-        Time.timeScale = 1.0f;
-
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-
-        freezePlayer.enabled = true;
-        pistol.enabled = true;
+        PrepereForGame();
 
         mainMenuCanvas.enabled = false;
         settingsCanvas.enabled = false;
 
         isGamePaused = false;
+    }
+
+    public void PrepareForMenu()
+    {
+        Time.timeScale = 0.0f;
+
+        playerController.canMove = false;
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+
+        playerController.enabled = false;
+        pistol.enabled = false;
+    }
+
+    public void PrepereForGame()
+    {
+        Time.timeScale = 1.0f;
+
+        playerController.canMove = true;
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+        playerController.enabled = true;
+        pistol.enabled = true;
     }
 
     public void SceneChange(string name)

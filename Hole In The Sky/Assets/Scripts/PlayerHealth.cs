@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -35,6 +36,9 @@ public class PlayerHealth : MonoBehaviour
 
     public void Die()
     {
-        Debug.Log("U ded lul");
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        SceneManager.LoadScene("MainMenu");
     }
 }
