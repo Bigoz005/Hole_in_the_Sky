@@ -12,19 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3f6f3f7c722b4544b97e3c75840aa33, type: 3}
   m_Name: AutoExposure
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   enabled:
     overrideState: 1
     value: 1
   filtering:
     overrideState: 1
-    value: {x: 50, y: 74.90125}
+    value: {x: 33.058243, y: 74.90125}
   minLuminance:
     overrideState: 1
-    value: 2
+    value: -0.74
   maxLuminance:
     overrideState: 1
-    value: 4
+    value: 9
   keyValue:
     overrideState: 1
     value: 1
@@ -59,6 +59,7 @@ MonoBehaviour:
   - {fileID: 6108982373749185519}
   - {fileID: 8611840658818459676}
   - {fileID: 36827383989830887}
+  - {fileID: 8636068456622150455}
 --- !u!114 &36827383989830887
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -102,7 +103,7 @@ MonoBehaviour:
     defaultState: 1
   opacity:
     overrideState: 1
-    value: 0.615
+    value: 0.678
 --- !u!114 &2500239780094059864
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -205,7 +206,7 @@ MonoBehaviour:
     value: 0.5
   contrast:
     overrideState: 1
-    value: -10
+    value: 10
   mixerRedOutRedIn:
     overrideState: 1
     value: 100
@@ -235,7 +236,7 @@ MonoBehaviour:
     value: 100
   lift:
     overrideState: 1
-    value: {x: 0.9882134, y: 0.99338156, z: 1, w: 0.058436815}
+    value: {x: 0.9882134, y: 0.99338156, z: 1, w: 0.042576388}
   gamma:
     overrideState: 1
     value: {x: 0.9848012, y: 0.9823957, z: 1, w: -0.0073047103}
@@ -1620,3 +1621,31 @@ MonoBehaviour:
   sampleCount:
     overrideState: 1
     value: 5
+--- !u!114 &8636068456622150455
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 556797029e73b2347956b6579e77e05b, type: 3}
+  m_Name: DepthOfField
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  focusDistance:
+    overrideState: 1
+    value: 7
+  aperture:
+    overrideState: 1
+    value: 5.6
+  focalLength:
+    overrideState: 1
+    value: 50
+  kernelSize:
+    overrideState: 1
+    value: 1

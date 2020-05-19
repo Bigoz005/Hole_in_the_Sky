@@ -16,7 +16,6 @@ public class Settings : MonoBehaviour
     {
         sound = true;
         wasChanged = false;
-        QualitySettings.shadows = ShadowQuality.All;
         shadowText.GetComponentInChildren<Text>().text = "Shadows: 2";
         soundText.GetComponentInChildren<Text>().text = "Sounds: 1";
         slider.value = 0.5f;

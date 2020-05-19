@@ -23,7 +23,14 @@ public class Note : MonoBehaviour
         noteButton.SetActive(false);
     }
 
-    public void ShowNoteImage()
+    void Update()
+    {
+        if (Input.GetButtonDown("Cancel"))
+        {
+            HideNoteImage();
+        }
+    }
+        public void ShowNoteImage()
     {
         if (!isActive)
         {
