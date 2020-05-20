@@ -29,6 +29,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private AudioClip m_LandSound;           // the sound played when character touches back on ground.
 
         public bool canMove;
+        public bool canRun;
+        public bool canJump;
         private Camera m_Camera;
         private bool m_Jump;
         private float m_YRotation;
@@ -47,6 +49,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private void Start()
         {
             canMove = true;
+            canRun = true;
+            canJump = true;
             m_CharacterController = GetComponent<CharacterController>();
             m_Camera = Camera.main;
             m_OriginalCameraPosition = m_Camera.transform.localPosition;
@@ -69,7 +73,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 // the jump state needs to read here to make sure it is not missed
                 if (!m_Jump)
                 {
-                    m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
+                    if (canJump)
+                    {
+                        m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
+                    }
                 }
 
                 if (!m_PreviouslyGrounded && m_CharacterController.isGrounded)
@@ -223,7 +230,15 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_IsWalking = !Input.GetKey(KeyCode.LeftShift);
 #endif
             // set the desired speed to be walking or running
-            speed = m_IsWalking ? m_WalkSpeed : m_RunSpeed;
+            if (canRun)
+            {
+                speed = m_IsWalking ? m_WalkSpeed : m_RunSpeed;
+            }
+            else
+            {
+                speed = m_WalkSpeed;
+            }
+
             m_Input = new Vector2(horizontal, vertical);
 
             // normalize input if it exceeds 1 in combined length:

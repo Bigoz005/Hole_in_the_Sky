@@ -12,6 +12,7 @@ public class PlayerHealth : MonoBehaviour
     private bool isHealing = true;
     private bool isTakingDmg = false;
     private bool gettingHit = false;
+    private bool isDying = false;
     private Camera playerCamera;
     private FirstPersonController playerController;
     private ColorGrading colorGrading;
@@ -31,52 +32,67 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isHealing)
+        //if less than 50hp then can't run and jump
+        if (currentHp < 50)
         {
-            if (currentHp < maxHp)
-            {
-                currentHp += Time.deltaTime * 5;
-            }
+            playerController.canRun = false;
+            playerController.canJump = false;
+        }
+        else
+        {
+            playerController.canRun = true;
+            playerController.canJump = true;
+        }
 
-            if (playerCamera.fieldOfView > 63)
+        if (!isDying)
+        {
+            if (isHealing)
             {
-                playerCamera.fieldOfView -= Time.deltaTime * 0.9f;
-            }
+                if (currentHp < maxHp)
+                {
+                    currentHp += Time.deltaTime * 5;
+                }
 
-            if (colorGrading.saturation.value < 15)
-            {
-                colorGrading.saturation.value += Time.deltaTime * 7.0f;
+                if (playerCamera.fieldOfView > 63)
+                {
+                    playerCamera.fieldOfView -= Time.deltaTime * 0.9f;
+                }
+
+                if (colorGrading.saturation.value < 15)
+                {
+                    colorGrading.saturation.value += Time.deltaTime * 7.0f;
+                }
+
+                if (playerController.m_WalkSpeed < 2)
+                {
+                    playerController.m_WalkSpeed += Time.deltaTime * 0.8f;
+                }
+
+                if (playerController.m_RunSpeed < 3)
+                {
+                    playerController.m_RunSpeed += Time.deltaTime * 0.8f;
+                }
             }
 
             if (depthOfField.focusDistance.value < 7)
             {
                 depthOfField.focusDistance.value += Time.deltaTime * 0.9f;
             }
-            
-            if (playerController.m_WalkSpeed < 2)
+
+            if (gettingHit)
             {
-                playerController.m_WalkSpeed += Time.deltaTime * 0.8f;
+                Camera.main.transform.position += Random.insideUnitSphere * 0.045f;
             }
 
-            if (playerController.m_RunSpeed < 3)
+            if (currentHp <= 40)
             {
-                playerController.m_RunSpeed += Time.deltaTime * 0.8f;
+                Camera.main.transform.position += Random.insideUnitSphere * 0.02f;
             }
-        }
 
-        if (gettingHit)
-        {
-            Camera.main.transform.position += Random.insideUnitSphere * 0.05f;
-        }
-
-        if(currentHp <= 40)
-        {
-            Camera.main.transform.position += Random.insideUnitSphere * 0.04f;
-        }
-
-        if (currentHp <= 20)
-        {
-            Camera.main.transform.position += Random.insideUnitSphere * 0.06f;
+            if (currentHp <= 20)
+            {
+                Camera.main.transform.position += Random.insideUnitSphere * 0.03f;
+            }
         }
     }
 
@@ -102,29 +118,32 @@ public class PlayerHealth : MonoBehaviour
 
     public void CheckHP()
     {
-        if(currentHp <= 100 && currentHp > 80)
+        if (currentHp <= 100 && currentHp > 80)
         {
             playerCamera.fieldOfView = 63;
             colorGrading.saturation.value = 15;
-            depthOfField.focusDistance.value = 7;
+            //depthOfField.focusDistance.value = 7;
+            depthOfField.focusDistance.value = 0.5f;
             playerController.m_WalkSpeed = 2;
             playerController.m_RunSpeed = 3;
         }
 
-        if (currentHp <= 80 && currentHp > 60)
+        if (currentHp <= 80 && currentHp > 50)
         {
             playerCamera.fieldOfView = 68;
             colorGrading.saturation.value = -10;
-            depthOfField.focusDistance.value = 4;
+            depthOfField.focusDistance.value = 0.5f;
+            //depthOfField.focusDistance.value = 4;
             playerController.m_WalkSpeed = 1.7f;
             playerController.m_RunSpeed = 2.5f;
         }
 
-        if (currentHp <= 60 && currentHp > 40)
+        if (currentHp <= 50 && currentHp > 40)
         {
             playerCamera.fieldOfView = 73;
             colorGrading.saturation.value = -35;
-            depthOfField.focusDistance.value = 1.5f;
+            depthOfField.focusDistance.value = 0.5f;
+            //depthOfField.focusDistance.value = 1.5f;
             playerController.m_WalkSpeed = 1.5f;
             playerController.m_RunSpeed = 2.2f;
         }
@@ -133,7 +152,8 @@ public class PlayerHealth : MonoBehaviour
         {
             playerCamera.fieldOfView = 78;
             colorGrading.saturation.value = -60;
-            depthOfField.focusDistance.value = 0.8f;
+            depthOfField.focusDistance.value = 0.5f;
+            //depthOfField.focusDistance.value = 0.8f;
             playerController.m_WalkSpeed = 1.3f;
             playerController.m_RunSpeed = 1.8f;
         }
@@ -142,7 +162,8 @@ public class PlayerHealth : MonoBehaviour
         {
             playerCamera.fieldOfView = 83;
             colorGrading.saturation.value = -85;
-            depthOfField.focusDistance.value = 0.4f;
+            depthOfField.focusDistance.value = 0.5f;
+            //depthOfField.focusDistance.value = 0.4f;
             playerController.m_WalkSpeed = 1.0f;
             playerController.m_RunSpeed = 1.5f;
         }
@@ -152,6 +173,7 @@ public class PlayerHealth : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        isDying = true;
 
         StartCoroutine("WaitForDie");
     }
@@ -164,20 +186,20 @@ public class PlayerHealth : MonoBehaviour
 
     public IEnumerator WaitForHit()
     {
-        yield return new WaitForSecondsRealtime(0.25f);
+        yield return new WaitForSecondsRealtime(0.2f);
         gettingHit = true;
         StartCoroutine("HitDuration");
     }
 
     public IEnumerator HitDuration()
     {
-        yield return new WaitForSecondsRealtime(0.4f);
+        yield return new WaitForSecondsRealtime(0.3f);
         gettingHit = false;
     }
 
     public IEnumerator WaitForDie()
     {
-        yield return new WaitForSecondsRealtime(5.0f);
+        yield return new WaitForSecondsRealtime(10.0f);
         SceneManager.LoadScene("MainMenu");
     }
 
