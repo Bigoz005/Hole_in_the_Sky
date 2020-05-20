@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine.Rendering.PostProcessing;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityStandardAssets.Characters.FirstPerson;
 
@@ -13,14 +14,21 @@ public class PlayerHealth : MonoBehaviour
     private bool isTakingDmg = false;
     private bool gettingHit = false;
     private bool isDying = false;
+    private bool readyToShow = false;
     private Camera playerCamera;
     private FirstPersonController playerController;
     private ColorGrading colorGrading;
     private DepthOfField depthOfField;
+    public Image bloodImage;
+    private Color tempBloodColor;
+    public Image gameOverImage;
+    private Color tempGameOverColor;
 
     // Start is called before the first frame update
     void Start()
     {
+        tempBloodColor = bloodImage.color;
+        tempGameOverColor = gameOverImage.color;
         currentHp = maxHp;
         playerCamera = GetComponentInChildren<Camera>();
         playerController = GetComponent<FirstPersonController>();
@@ -32,20 +40,23 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if less than 50hp then can't run and jump
-        if (currentHp < 50)
-        {
-            playerController.canRun = false;
-            playerController.canJump = false;
-        }
-        else
-        {
-            playerController.canRun = true;
-            playerController.canJump = true;
-        }
+        bloodImage.color = tempBloodColor;
+        gameOverImage.color = tempGameOverColor;
 
         if (!isDying)
         {
+            //if less than 50hp then can't run and jump
+            if (currentHp < 50)
+            {
+                playerController.canRun = false;
+                playerController.canJump = false;
+            }
+            else
+            {
+                playerController.canRun = true;
+                playerController.canJump = true;
+            }
+
             if (isHealing)
             {
                 if (currentHp < maxHp)
@@ -72,6 +83,11 @@ public class PlayerHealth : MonoBehaviour
                 {
                     playerController.m_RunSpeed += Time.deltaTime * 0.8f;
                 }
+
+                if (tempBloodColor.a > 0.0f)
+                {
+                    tempBloodColor.a -= Time.deltaTime * 0.01f;
+                }
             }
 
             if (depthOfField.focusDistance.value < 7)
@@ -94,25 +110,40 @@ public class PlayerHealth : MonoBehaviour
                 Camera.main.transform.position += Random.insideUnitSphere * 0.03f;
             }
         }
+        else
+        {
+            depthOfField.focusDistance.value -= Time.deltaTime * 0.9f;
+
+            Camera.main.transform.position += Random.insideUnitSphere * 0.02f;
+
+            tempBloodColor.a -= Time.deltaTime * 0.008f;
+            if (readyToShow)
+            {
+                tempGameOverColor.a += Time.deltaTime * 0.15f;
+            }
+        }
     }
 
     public void TakeDamage(int _damage)
     {
-        isHealing = false;
-
-        StartCoroutine("WaitForHit");
-
-        currentHp -= _damage;
-
-        CheckHP();
-
-        if (currentHp <= 0)
+        if (!isDying)
         {
-            Die();
-        }
-        else
-        {
-            StartCoroutine("WaitForHealing");
+            isHealing = false;
+
+            StartCoroutine("WaitForHit");
+
+            currentHp -= _damage;
+
+            if (currentHp <= 0)
+            {
+                Die();
+            }
+            else
+            {
+                StartCoroutine("WaitForHealing");
+            }
+            tempBloodColor.a += 0.005f;
+            CheckHP();
         }
     }
 
@@ -173,8 +204,11 @@ public class PlayerHealth : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+
+        playerController.enabled = false;
         isDying = true;
 
+        StartCoroutine("WaitForShow");
         StartCoroutine("WaitForDie");
     }
 
@@ -197,9 +231,15 @@ public class PlayerHealth : MonoBehaviour
         gettingHit = false;
     }
 
+    public IEnumerator WaitForShow()
+    {
+        yield return new WaitForSecondsRealtime(2.0f);
+        readyToShow = true;
+    }
+
     public IEnumerator WaitForDie()
     {
-        yield return new WaitForSecondsRealtime(10.0f);
+        yield return new WaitForSecondsRealtime(13.0f);
         SceneManager.LoadScene("MainMenu");
     }
 
