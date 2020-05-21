@@ -27,12 +27,13 @@ namespace UnityStandardAssets.CrossPlatformInput
 
 		void OnEnable()
 		{
-			CreateVirtualAxes();
+			
 		}
 
         void Start()
         {
             m_StartPos = transform.position;
+            CreateVirtualAxes();//was in OnEnable
         }
 
 		void UpdateVirtualAxes(Vector3 value)
