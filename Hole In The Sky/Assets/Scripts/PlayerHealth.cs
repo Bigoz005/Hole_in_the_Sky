@@ -8,6 +8,8 @@ using UnityStandardAssets.Characters.FirstPerson;
 
 public class PlayerHealth : MonoBehaviour
 {
+    public AudioClip hitAudio;
+    private AudioSource audioSource;
     public int maxHp = 100;
     private float currentHp = 0;
     private bool isHealing = true;
@@ -27,6 +29,7 @@ public class PlayerHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         tempBloodColor = bloodImage.color;
         tempGameOverColor = gameOverImage.color;
         currentHp = maxHp;
@@ -128,6 +131,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (!isDying)
         {
+            audioSource.PlayOneShot(hitAudio);
             isHealing = false;
 
             StartCoroutine("WaitForHit");
