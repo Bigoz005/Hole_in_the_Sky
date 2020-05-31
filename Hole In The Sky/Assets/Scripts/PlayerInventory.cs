@@ -14,7 +14,7 @@ public class PlayerInventory : MonoBehaviour
     public AudioClip pistolHideSound;
     private AudioSource audioSource;
 
-    private bool isPistolInHand;
+    public bool isPistolInHand;
     private bool isPistolPickedUp;
 
     void Start()

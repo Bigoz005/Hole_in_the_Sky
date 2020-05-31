@@ -8,8 +8,6 @@ using UnityStandardAssets.Characters.FirstPerson;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public AudioClip hitAudio;
-    private AudioSource audioSource;
     public int maxHp = 100;
     private float currentHp = 0;
     private bool isHealing = true;
@@ -25,11 +23,19 @@ public class PlayerHealth : MonoBehaviour
     private Color tempBloodColor;
     public Image gameOverImage;
     private Color tempGameOverColor;
+    public AudioClip hitAudio;
+    private AudioSource audioSource;
+    private Animator animator;
+    private PlayerInventory playerInventory;
+    public GameObject playerHud;
 
     // Start is called before the first frame update
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        animator = GetComponentInChildren<Animator>();
+        animator.enabled = false;
+        playerInventory = GetComponent<PlayerInventory>();
         tempBloodColor = bloodImage.color;
         tempGameOverColor = gameOverImage.color;
         currentHp = maxHp;
@@ -209,6 +215,12 @@ public class PlayerHealth : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
+        animator.enabled = true;
+        playerInventory.isPistolInHand = false;
+        playerHud.transform.GetChild(1).gameObject.SetActive(false);
+        playerHud.transform.GetChild(2).gameObject.SetActive(false);
+        playerHud.transform.GetChild(3).gameObject.SetActive(false);
+
         playerController.enabled = false;
         isDying = true;
 
@@ -237,7 +249,7 @@ public class PlayerHealth : MonoBehaviour
 
     public IEnumerator WaitForShow()
     {
-        yield return new WaitForSecondsRealtime(2.0f);
+        yield return new WaitForSecondsRealtime(3.0f);
         readyToShow = true;
     }
 
