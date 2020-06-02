@@ -7,7 +7,7 @@ public class PianoKey : MonoBehaviour
     private AudioSource audioSource;
     public AudioClip pianoKeySound;
 
-    private bool isPressed;
+    public bool isPressed;
     private float smooth = 5f;
 
     void Start()
