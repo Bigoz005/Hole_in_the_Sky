@@ -10,6 +10,7 @@ public class PadLock : MonoBehaviour
     public GameObject playerObject;
     public GameObject chestObject;
     public GameObject pistolObject;
+    public GameObject noteObject;
 
     public AudioSource audioSource;
     public AudioClip upClickSound;
@@ -38,6 +39,7 @@ public class PadLock : MonoBehaviour
     {
         safeCanvas.enabled = false;
         pistolObject.SetActive(false);
+        noteObject.SetActive(false);
         audioSource = GetComponent<AudioSource>();
     }
 
@@ -181,6 +183,7 @@ public class PadLock : MonoBehaviour
 
             chestObject.GetComponentInChildren<ChestDoor>().gameObject.layer = 8;
             pistolObject.SetActive(true);
+            noteObject.SetActive(true);
             HideSafeCanvas();
             BeforeDestroy();
         }

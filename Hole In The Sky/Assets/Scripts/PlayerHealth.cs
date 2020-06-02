@@ -11,7 +11,7 @@ public class PlayerHealth : MonoBehaviour
     public int maxHp = 100;
     private float currentHp = 0;
     private bool isHealing = true;
-    private bool isTakingDmg = false;
+    //private bool isTakingDmg = false;
     private bool gettingHit = false;
     private bool isDying = false;
     private bool readyToShow = false;

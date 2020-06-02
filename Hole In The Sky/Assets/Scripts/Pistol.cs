@@ -21,7 +21,7 @@ public class Pistol : MonoBehaviour
     private Vector3 firstPositionSlider;
     private Vector3 firstPositionTrigger;
 
-    private GameObject light;
+    private new GameObject light;
     private GameObject smoke;
     private GameObject explosion;
 
