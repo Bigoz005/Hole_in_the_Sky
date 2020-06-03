@@ -1,11 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class PianoRiddle : MonoBehaviour
 {
     public GameObject paperPage;
     public GameObject piano;
+    public GameObject portal;
+    public GameObject player;
     private Dictionary<string, Transform> pianoKeys = new Dictionary<string, Transform>();
     private Transform pianoKeyD;
     private Transform pianoKeyF;
@@ -13,9 +17,19 @@ public class PianoRiddle : MonoBehaviour
     private bool pianoKeyDPressed;
     private bool pianoKeyFPressed;
     private bool pianoKeyAPressed;
+    private bool resolved;
+    private ChromaticAberration chromaticAberration;
+    private ColorGrading colorGrading;
 
     void Start()
     {
+        portal.SetActive(false);
+        resolved = false;
+
+        PostProcessVolume postProcessVolume = player.GetComponentInChildren<PostProcessVolume>();
+        postProcessVolume.profile.TryGetSettings<ChromaticAberration>(out chromaticAberration);
+        postProcessVolume.profile.TryGetSettings<ColorGrading>(out colorGrading);
+
         foreach (Transform t in piano.transform)
         {
             pianoKeys.Add(t.name, t);
@@ -38,6 +52,30 @@ public class PianoRiddle : MonoBehaviour
             CheckKeys();
             CheckSolution();
             CheckOtherKeys();
+        }
+
+        if (resolved)
+        {
+            if (colorGrading.saturation.value < 100.0f)
+            {
+                colorGrading.saturation.value += Time.deltaTime * 7.0f;
+
+            }
+
+            if (colorGrading.postExposure.value < 3.0f)
+            {
+                colorGrading.postExposure.value += Time.deltaTime * 2.0f;
+            }
+
+            if (colorGrading.tint.value < 100.0f)
+            {
+                colorGrading.tint.value += Time.deltaTime * 4.0f;
+            }
+
+            Camera.main.transform.position += Random.insideUnitSphere * 0.05f;
+            player.GetComponent<FirstPersonController>().canJump = false;
+            player.GetComponent<FirstPersonController>().canRun = false;
+            player.GetComponent<FirstPersonController>().m_WalkSpeed = 1.4f;
         }
     }
 
@@ -76,7 +114,10 @@ public class PianoRiddle : MonoBehaviour
     {
         if (pianoKeyAPressed && pianoKeyDPressed && pianoKeyFPressed)
         {
-            Debug.Log("NICE");
+            resolved = true;
+            chromaticAberration.intensity.value = 1.0f;
+
+            portal.SetActive(true);
         }
     }
 
