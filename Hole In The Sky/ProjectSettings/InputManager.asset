@@ -297,7 +297,7 @@ InputManager:
     m_Name: Interact
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: r
+    negativeButton: 
     positiveButton: e
     altNegativeButton: 
     altPositiveButton: joystick button 1
