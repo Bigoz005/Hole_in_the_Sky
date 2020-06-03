@@ -11,15 +11,39 @@ public class Settings : MonoBehaviour
     private float value;
     private bool sound;
     private bool wasChanged;
+    private GlobalSettingsData globalSettingsData;
 
     void Start()
     {
-        sound = true;
+        globalSettingsData = GameObject.Find("GlobalSettings").gameObject.GetComponent<GlobalSettingsData>();
+        sound = globalSettingsData.sound;
+        slider.value = globalSettingsData.sliderValue;
+        value = globalSettingsData.sliderValue;
+        QualitySettings.shadows = globalSettingsData.shadowQuality;
+
         wasChanged = false;
-        shadowText.GetComponentInChildren<Text>().text = "Shadows: 2";
-        soundText.GetComponentInChildren<Text>().text = "Sounds: 1";
-        slider.value = 0.5f;
-        value = 0.5f;
+
+        if (globalSettingsData.shadowQuality == ShadowQuality.All)
+        {
+            shadowText.GetComponentInChildren<Text>().text = "Shadows: 2";
+        }
+        else if (globalSettingsData.shadowQuality == ShadowQuality.HardOnly)
+        {
+            shadowText.GetComponentInChildren<Text>().text = "Shadows: 1";
+        }
+        else
+        {
+            shadowText.GetComponentInChildren<Text>().text = "Shadows: 0";
+        }
+
+        if (sound)
+        {
+            soundText.GetComponentInChildren<Text>().text = "Sounds: 1";
+        }
+        else
+        {
+            soundText.GetComponentInChildren<Text>().text = "Sounds: 0";
+        }
     }
 
     private void Update()
@@ -35,6 +59,7 @@ public class Settings : MonoBehaviour
         if (QualitySettings.shadows == ShadowQuality.Disable && !wasChanged)
         {
             QualitySettings.shadows = ShadowQuality.All;
+            globalSettingsData.shadowQuality = ShadowQuality.All;
             QualitySettings.shadowmaskMode = ShadowmaskMode.DistanceShadowmask;
             shadowText.GetComponentInChildren<Text>().text = "Shadows: 2";
             wasChanged = true;
@@ -43,6 +68,7 @@ public class Settings : MonoBehaviour
         if (QualitySettings.shadows == ShadowQuality.All && !wasChanged)
         {
             QualitySettings.shadows = ShadowQuality.HardOnly;
+            globalSettingsData.shadowQuality = ShadowQuality.HardOnly;
             QualitySettings.shadowmaskMode = ShadowmaskMode.Shadowmask;
             shadowText.GetComponentInChildren<Text>().text = "Shadows: 1";
             wasChanged = true;
@@ -51,6 +77,7 @@ public class Settings : MonoBehaviour
         if (QualitySettings.shadows == ShadowQuality.HardOnly && !wasChanged)
         {
             QualitySettings.shadows = ShadowQuality.Disable;
+            globalSettingsData.shadowQuality = ShadowQuality.Disable;
             QualitySettings.shadowmaskMode = ShadowmaskMode.Shadowmask;
             shadowText.GetComponentInChildren<Text>().text = "Shadows: 0";
             wasChanged = true;
@@ -62,6 +89,7 @@ public class Settings : MonoBehaviour
     public void ChangeBrightness()
     {
         value = slider.value;
+        globalSettingsData.sliderValue = slider.value;
     }
 
     public void ChangeSound()
@@ -70,11 +98,13 @@ public class Settings : MonoBehaviour
         if (sound)
         {
             AudioListener.volume = 1.0f;
+            globalSettingsData.sound = true;
             soundText.GetComponentInChildren<Text>().text = "Sounds: 1";
         }
         else
         {
             AudioListener.volume = 0f;
+            globalSettingsData.sound = false;
             soundText.GetComponentInChildren<Text>().text = "Sounds: 0";
         }
     }
