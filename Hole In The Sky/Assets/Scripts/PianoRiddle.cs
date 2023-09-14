@@ -10,12 +10,13 @@ public class PianoRiddle : MonoBehaviour
     public GameObject piano;
     public GameObject portal;
     public GameObject player;
+
     private Dictionary<string, Transform> pianoKeys = new Dictionary<string, Transform>();
-    private Transform pianoKeyD;
-    private Transform pianoKeyF;
-    private Transform pianoKeyA;
+    private ArrayList keysD = new ArrayList() { "D1", "D2", "D3", "D4", "D5", "D6", "D7", "D8", "D9" };
+    private ArrayList keysFis = new ArrayList() { "F#1", "F#2", "F#3", "F#4", "F#", "F#6", "F#7", "F#8", "F#9" };
+    private ArrayList keysA = new ArrayList() { "A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9" };
     private bool pianoKeyDPressed;
-    private bool pianoKeyFPressed;
+    private bool pianoKeyFisPressed;
     private bool pianoKeyAPressed;
     private bool resolved;
     private ChromaticAberration chromaticAberration;
@@ -30,30 +31,12 @@ public class PianoRiddle : MonoBehaviour
         postProcessVolume.profile.TryGetSettings<ChromaticAberration>(out chromaticAberration);
         postProcessVolume.profile.TryGetSettings<ColorGrading>(out colorGrading);
 
-        foreach (Transform t in piano.transform)
-        {
-            pianoKeys.Add(t.name, t);
-        }
+        /*weź w jakimś starcie zmień material.renderQueue na 4000 tego materiału który ma broń*/
 
-        pianoKeyD = pianoKeys["keyD2"];
-        pianoKeyF = pianoKeys["keyF#2"];
-        pianoKeyA = pianoKeys["keyA2"];
-
-        pianoKeys.Remove("keyD2");
-        pianoKeys.Remove("keyF#2");
-        pianoKeys.Remove("keyA2");
-        pianoKeys.Remove("GrandPianoBody");
     }
 
     void Update()
     {
-        if (paperPage.activeSelf)
-        {
-            CheckKeys();
-            CheckSolution();
-            CheckOtherKeys();
-        }
-
         if (resolved)
         {
             if (colorGrading.saturation.value < 100.0f)
@@ -77,42 +60,49 @@ public class PianoRiddle : MonoBehaviour
             player.GetComponent<FirstPersonController>().canRun = false;
             player.GetComponent<FirstPersonController>().m_WalkSpeed = 1.4f;
         }
+
     }
 
-    public void CheckKeys()
+
+    public void CheckKeys(string pianoKeyName)
     {
-        if (pianoKeyD.GetComponent<PianoKey>().isPressed)
+
+        Debug.Log(pianoKeyName);
+        if (keysD.IndexOf(pianoKeyName) != -1)
         {
             pianoKeyDPressed = true;
+            Debug.Log("pianoKeyDPressed");
         }
-
-        if (pianoKeyF.GetComponent<PianoKey>().isPressed)
+        else
         {
-            pianoKeyFPressed = true;
-        }
-
-        if (pianoKeyA.GetComponent<PianoKey>().isPressed)
-        {
-            pianoKeyAPressed = true;
-        }
-    }
-
-    public void CheckOtherKeys()
-    {
-        foreach (KeyValuePair<string, Transform> pianokey in pianoKeys)
-        {
-            if (pianokey.Value.GetComponent<PianoKey>().isPressed)
+            if (keysFis.IndexOf(pianoKeyName) != -1)
             {
-                pianoKeyDPressed = false;
-                pianoKeyFPressed = false;
-                pianoKeyAPressed = false;
+                pianoKeyFisPressed = true;
+                Debug.Log("pianoKeyFisPressed");
+            }
+            else
+            {
+                if (keysA.IndexOf(pianoKeyName) != -1)
+                {
+                    pianoKeyAPressed = true;
+                    Debug.Log("pianoKeyAPressed");
+                }
+                else
+                {
+                    Debug.Log("wrong");
+                    pianoKeyDPressed = false;
+                    pianoKeyFisPressed = false;
+                    pianoKeyAPressed = false;
+                }
             }
         }
+
+        CheckSolution();
     }
 
     public void CheckSolution()
     {
-        if (pianoKeyAPressed && pianoKeyDPressed && pianoKeyFPressed)
+        if (pianoKeyAPressed && pianoKeyDPressed && pianoKeyFisPressed)
         {
             resolved = true;
             chromaticAberration.intensity.value = 1.0f;

@@ -6,12 +6,13 @@ public class PianoKey : MonoBehaviour
 {
     private AudioSource audioSource;
     public AudioClip pianoKeySound;
-
+    private PianoRiddle parentComponent;
     public bool isPressed;
     private float smooth = 5f;
 
     void Start()
     {
+        parentComponent = this.GetComponentInParent<PianoRiddle>();
         isPressed = false;
         audioSource = GetComponentInParent<AudioSource>();
     }
@@ -21,6 +22,7 @@ public class PianoKey : MonoBehaviour
         if (!isPressed)
         {
             isPressed = true;
+            parentComponent.CheckKeys(pianoKeySound.name);
             audioSource.PlayOneShot(pianoKeySound);
             StartCoroutine("WaitForEnd");
         }
@@ -39,8 +41,6 @@ public class PianoKey : MonoBehaviour
     {
         if (isPressed)
         {
-            // 1. Quaternions are used to represent rotations. Implemented in:UnityEngine.CoreModule
-            // 2. deltaTime for frame independence movement
             Quaternion targetRotationPressed = Quaternion.Euler(0, -0.5f, 0);
             transform.localRotation = Quaternion.Slerp(transform.localRotation, targetRotationPressed, smooth * Time.deltaTime);
         }

@@ -9,6 +9,7 @@ public class PianoSoundTrigger : MonoBehaviour
     public AudioClip scarySound;
     public Light flashLight;
     public Light pianoLight;
+    public PianoRiddle pianoRiddle;
 
     private bool hasPlayed;
 
@@ -120,10 +121,16 @@ public class PianoSoundTrigger : MonoBehaviour
         i++;
     }
 
+    public void CheckRiddle(string pianoKeyName)
+    {
+        /*pianoRiddle.CheckKeys(pianoKeyName);*/
+    }
+
     public IEnumerator WaitWhole(string pianoKeyName)
     {
         Transform pianoKey = pianoKeys["key" + pianoKeyName];
-        readyToPlay = false;
+        readyToPlay = false;        
+        CheckRiddle(pianoKeyName);
         pianoKey.GetComponent<PianoKey>().playSound();
         yield return new WaitForSeconds(pianoKey.GetComponent<PianoKey>().pianoKeySound.length);
         i++;
@@ -137,6 +144,7 @@ public class PianoSoundTrigger : MonoBehaviour
     {
         Transform pianoKey = pianoKeys["key" + pianoKeyName];
         readyToPlay = false;
+        CheckRiddle(pianoKeyName);
         pianoKey.GetComponent<PianoKey>().playSound();
         yield return new WaitForSeconds(pianoKey.GetComponent<PianoKey>().pianoKeySound.length / 6);
         i++;
@@ -150,6 +158,7 @@ public class PianoSoundTrigger : MonoBehaviour
     {
         Transform pianoKey = pianoKeys["key" + pianoKeyName];
         readyToPlay = false;
+        CheckRiddle(pianoKeyName);
         pianoKey.GetComponent<PianoKey>().playSound();
         yield return new WaitForSeconds(pianoKey.GetComponent<PianoKey>().pianoKeySound.length / 8);
         i++;
@@ -163,6 +172,7 @@ public class PianoSoundTrigger : MonoBehaviour
     {
         Transform pianoKey = pianoKeys["key" + pianoKeyName];
         readyToPlay = false;
+        CheckRiddle(pianoKeyName);
         pianoKey.GetComponent<PianoKey>().playSound();
         yield return new WaitForSeconds(pianoKey.GetComponent<PianoKey>().pianoKeySound.length / 12);
         i++;
