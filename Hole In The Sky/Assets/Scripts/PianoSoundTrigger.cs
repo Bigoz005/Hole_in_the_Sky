@@ -88,7 +88,7 @@ public class PianoSoundTrigger : MonoBehaviour
                 }
                 else if (i % 3 == 0)
                 {
-                    StartCoroutine("WaitHalfQuater", "F#4");
+                    StartCoroutine("WaitHalfQuater", "C#4");
                 }
                 else if (i % 4 == 0)
                 {
