@@ -16,11 +16,13 @@ public class PlayerInventory : MonoBehaviour
 
     public bool isPistolInHand;
     private bool isPistolPickedUp;
+    private bool isNoteChecked;
 
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
         isPistolInHand = false;
+        isNoteChecked = false;
         isPistolPickedUp = false;
     }
 
@@ -67,5 +69,15 @@ public class PlayerInventory : MonoBehaviour
     public void SetPickedUp(bool value)
     {
         isPistolPickedUp = value;
+    }
+
+    public void SetIsNoteChecked(bool value)
+    {
+        isNoteChecked = value;
+    }
+
+    public bool GetIsNoteChecked()
+    {
+        return isNoteChecked;
     }
 }

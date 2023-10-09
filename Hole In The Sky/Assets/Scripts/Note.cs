@@ -28,7 +28,7 @@ public class Note : MonoBehaviour
             HideNoteImage();
         }
     }
-        public void ShowNoteImage()
+    public void ShowNoteImage()
     {
         if (!isActive)
         {
@@ -41,6 +41,7 @@ public class Note : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             GetComponent<AudioSource>().PlayOneShot(pickupSound);
+            playerObject.GetComponent<PlayerInventory>().SetIsNoteChecked(true);
         }
     }
 

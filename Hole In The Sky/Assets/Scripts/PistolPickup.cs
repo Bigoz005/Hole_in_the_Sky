@@ -19,7 +19,7 @@ public class PistolPickup : MonoBehaviour
 
         player.GetComponent<PlayerInventory>().SetPickedUp(true);
         player.GetComponent<PlayerInventory>().SetInHand(true);
-
+        
         foreach (GameObject zombie in zombies)
         {
             zombie.SetActive(true);

@@ -9,6 +9,7 @@ public class PianoRiddle : MonoBehaviour
     public GameObject paperPage;
     public GameObject piano;
     public GameObject portal;
+    public GameObject portalRoom;
     public GameObject player;
 
     private Dictionary<string, Transform> pianoKeys = new Dictionary<string, Transform>();
@@ -25,6 +26,7 @@ public class PianoRiddle : MonoBehaviour
     void Start()
     {
         portal.SetActive(false);
+        portalRoom.SetActive(false);
         resolved = false;
 
         PostProcessVolume postProcessVolume = player.GetComponentInChildren<PostProcessVolume>();
@@ -99,12 +101,13 @@ public class PianoRiddle : MonoBehaviour
 
     public void CheckSolution()
     {
-        if (pianoKeyAPressed && pianoKeyDPressed && pianoKeyFisPressed)
+        if (pianoKeyAPressed && pianoKeyDPressed && pianoKeyFisPressed && player.GetComponent<PlayerInventory>().GetIsNoteChecked())
         {
             resolved = true;
             chromaticAberration.intensity.value = 1.0f;
 
             portal.SetActive(true);
+            portalRoom.SetActive(true);
         }
     }
 
