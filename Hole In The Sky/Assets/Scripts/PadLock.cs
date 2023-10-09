@@ -25,7 +25,7 @@ public class PadLock : MonoBehaviour
     private bool wasPlayed = false;
 
     private string currentCode = "0000";
-    private string code01 = "2137";
+    private string code01 = "3456";
 
     public Text number1Text;
     public Text number2Text;

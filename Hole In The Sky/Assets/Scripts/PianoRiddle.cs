@@ -30,9 +30,6 @@ public class PianoRiddle : MonoBehaviour
         PostProcessVolume postProcessVolume = player.GetComponentInChildren<PostProcessVolume>();
         postProcessVolume.profile.TryGetSettings<ChromaticAberration>(out chromaticAberration);
         postProcessVolume.profile.TryGetSettings<ColorGrading>(out colorGrading);
-
-        /*weź w jakimś starcie zmień material.renderQueue na 4000 tego materiału który ma broń*/
-
     }
 
     void Update()
