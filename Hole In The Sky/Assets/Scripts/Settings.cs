@@ -15,7 +15,13 @@ public class Settings : MonoBehaviour
 
     void Start()
     {
-        globalSettingsData = GameObject.Find("GlobalSettings").gameObject.GetComponent<GlobalSettingsData>();
+        if(GameObject.Find("GlobalSettings") != null) { 
+            globalSettingsData = GameObject.Find("GlobalSettings").gameObject.GetComponent<GlobalSettingsData>();
+        }
+        else
+        {
+            globalSettingsData = this.gameObject.AddComponent<GlobalSettingsData>();
+        }
         sound = globalSettingsData.sound;
         slider.value = globalSettingsData.sliderValue;
         value = globalSettingsData.sliderValue;

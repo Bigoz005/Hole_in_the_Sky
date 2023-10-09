@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: ecdfe9f0b8508af4d92737c656e36132
 ModelImporter:
-  serializedVersion: 26
+  serializedVersion: 19301
   internalIDToNameTable:
   - first:
       1: 100000
@@ -97,7 +97,7 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: 'Material #25'
+      name: Material #25
     second: {fileID: 2100000, guid: 057d5430214e8414cafeee34639cae34, type: 2}
   - first:
       type: UnityEngine:Material
@@ -105,7 +105,7 @@ ModelImporter:
       name: metal
     second: {fileID: 2100000, guid: 03db3db6f68dc514e8f1ee0c95468740, type: 2}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 0
@@ -143,6 +143,7 @@ ModelImporter:
     importBlendShapes: 1
     importCameras: 0
     importLights: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 1
     useFileUnits: 1
@@ -169,7 +170,6 @@ ModelImporter:
     normalSmoothingSource: 0
   referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
     serializedVersion: 3
     human: []
@@ -187,8 +187,10 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 0
   humanoidOversampling: 1
+  avatarSetup: 0
   additionalBone: 1
   userData: 
   assetBundleName: 

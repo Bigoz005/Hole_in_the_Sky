@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 3108062403fb4db45aa9f72e9dd7b443
 ModelImporter:
-  serializedVersion: 26
+  serializedVersion: 19301
   internalIDToNameTable:
   - first:
       1: 100000
@@ -241,75 +241,75 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: 'Material #196'
+      name: Material #196
     second: {fileID: 2100000, guid: d2e3abecedf2d8c4e975983148bdca1e, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: 'Material #40'
+      name: Material #40
     second: {fileID: 2100000, guid: 7bf3595b3a1cecc41b8a9fae66cbed7e, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: 'Material #55'
+      name: Material #55
     second: {fileID: 2100000, guid: 144c18ca4dcb7cd429e60a2057594312, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: 'Material #69'
+      name: Material #69
     second: {fileID: 2100000, guid: 7c37161386f3f1642995ea6bd632930f, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: 'Material #70'
+      name: Material #70
     second: {fileID: 2100000, guid: d720f34d93e707d429b5e1dcf06e6c30, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: 'Material #85'
+      name: Material #85
     second: {fileID: 2100000, guid: 25d10b31a39ca7d469da509d5fff04a2, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: 'Material #86'
+      name: Material #86
     second: {fileID: 2100000, guid: 75b926daec35fdb44be026abfdea63ba, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: 'Material #87'
+      name: Material #87
     second: {fileID: 2100000, guid: 75b926daec35fdb44be026abfdea63ba, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: 'Material #88'
+      name: Material #88
     second: {fileID: 2100000, guid: 354ad1e3fc0e02f47be82d0c6f900790, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: 'Material #89'
+      name: Material #89
     second: {fileID: 2100000, guid: d0c42f410a8483940b5c1ba4d6a89ef3, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: 'Material #91'
+      name: Material #91
     second: {fileID: 2100000, guid: 7c37161386f3f1642995ea6bd632930f, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: 'Material #92'
+      name: Material #92
     second: {fileID: 2100000, guid: 7c37161386f3f1642995ea6bd632930f, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: 'Material #93'
+      name: Material #93
     second: {fileID: 2100000, guid: 7c37161386f3f1642995ea6bd632930f, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: 'Material #94'
+      name: Material #94
     second: {fileID: 2100000, guid: 7c37161386f3f1642995ea6bd632930f, type: 2}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 0
@@ -347,8 +347,9 @@ ModelImporter:
     importBlendShapes: 1
     importCameras: 0
     importLights: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
@@ -373,7 +374,6 @@ ModelImporter:
     normalSmoothingSource: 0
   referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
     serializedVersion: 3
     human: []
@@ -391,8 +391,10 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
+  avatarSetup: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
