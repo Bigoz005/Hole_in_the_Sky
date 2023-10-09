@@ -444,7 +444,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &10069360
 Transform:
@@ -640,6 +640,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: standing_lamp3
       objectReference: {fileID: 0}
+    - target: {fileID: 125860, guid: 02bdf47f1b25840548fa721f35ac7d2e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 445266, guid: 02bdf47f1b25840548fa721f35ac7d2e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 26.494894
@@ -715,9 +719,17 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ec9131e40dcdea048a8629e11b6bc485, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: ec9131e40dcdea048a8629e11b6bc485, type: 3}
       propertyPath: m_Name
       value: standing_lamp1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: ec9131e40dcdea048a8629e11b6bc485, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: ec9131e40dcdea048a8629e11b6bc485, type: 3}
       propertyPath: m_LocalPosition.x
@@ -964,6 +976,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall_lamp2 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 148664, guid: 0ea924bb2e01d4e958266cfba2d572bf, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 414614, guid: 0ea924bb2e01d4e958266cfba2d572bf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.708
@@ -1098,7 +1114,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &57115249
 Transform:
@@ -1403,7 +1419,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &73336635
 Transform:
@@ -1785,7 +1801,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &142625248
 Transform:
@@ -2053,6 +2069,10 @@ PrefabInstance:
     - target: {fileID: 148664, guid: 0ea924bb2e01d4e958266cfba2d572bf, type: 3}
       propertyPath: m_Name
       value: wall_lamp2
+      objectReference: {fileID: 0}
+    - target: {fileID: 148664, guid: 0ea924bb2e01d4e958266cfba2d572bf, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 414614, guid: 0ea924bb2e01d4e958266cfba2d572bf, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2900,6 +2920,42 @@ PrefabInstance:
       propertyPath: m_Name
       value: cabinet (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 46fbe438016f1ef42a93a3237ba16514, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 46fbe438016f1ef42a93a3237ba16514, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 46fbe438016f1ef42a93a3237ba16514, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: 46fbe438016f1ef42a93a3237ba16514, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: 46fbe438016f1ef42a93a3237ba16514, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: 46fbe438016f1ef42a93a3237ba16514, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100012, guid: 46fbe438016f1ef42a93a3237ba16514, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100014, guid: 46fbe438016f1ef42a93a3237ba16514, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100016, guid: 46fbe438016f1ef42a93a3237ba16514, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 46fbe438016f1ef42a93a3237ba16514, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.327894
@@ -3132,7 +3188,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &193489963
 Transform:
@@ -3764,7 +3820,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &227004226
 Transform:
@@ -4158,7 +4214,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &269905211
 Transform:
@@ -4256,7 +4312,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &298234069
 Transform:
@@ -4526,6 +4582,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WaterProNighttime (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: bcae914220acd4907840a029bb9d9aec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: bcae914220acd4907840a029bb9d9aec, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.046
@@ -4591,9 +4651,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1262917279}
     m_Modifications:
+    - target: {fileID: 1000011337358206, guid: b53a6f42b18874e41b5848addda1acdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 1000013386087490, guid: b53a6f42b18874e41b5848addda1acdc, type: 3}
       propertyPath: m_Name
       value: Pot (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013386087490, guid: b53a6f42b18874e41b5848addda1acdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4000010944071766, guid: b53a6f42b18874e41b5848addda1acdc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4961,7 +5029,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &361540270
 Transform:
@@ -5519,7 +5587,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &413869647
 Transform:
@@ -5648,6 +5716,14 @@ PrefabInstance:
     - target: {fileID: 1373674770683304, guid: 0b594f7f6b4bd3541845b0ad8cf03433, type: 3}
       propertyPath: m_Name
       value: M1911A_Magazine_Black
+      objectReference: {fileID: 0}
+    - target: {fileID: 1373674770683304, guid: 0b594f7f6b4bd3541845b0ad8cf03433, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1606025204064832, guid: 0b594f7f6b4bd3541845b0ad8cf03433, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4793267319863236, guid: 0b594f7f6b4bd3541845b0ad8cf03433, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6276,6 +6352,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall_lamp2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 148664, guid: 0ea924bb2e01d4e958266cfba2d572bf, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 414614, guid: 0ea924bb2e01d4e958266cfba2d572bf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.430894
@@ -6593,6 +6673,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall_lamp1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 111670, guid: 3e1610affb6d74bd19d3897a80b395ab, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 440470, guid: 3e1610affb6d74bd19d3897a80b395ab, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9.863295
@@ -6794,7 +6878,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &494118526
 Transform:
@@ -6824,6 +6908,10 @@ PrefabInstance:
     - target: {fileID: 148664, guid: 0ea924bb2e01d4e958266cfba2d572bf, type: 3}
       propertyPath: m_Name
       value: wall_lamp2 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 148664, guid: 0ea924bb2e01d4e958266cfba2d572bf, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 414614, guid: 0ea924bb2e01d4e958266cfba2d572bf, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7461,6 +7549,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bullet_45mm_Full (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1122964723992546, guid: 8a41ccf7f50a0bb47bebb1aa010d8fd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1155386949238690, guid: 8a41ccf7f50a0bb47bebb1aa010d8fd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289114775797420, guid: 8a41ccf7f50a0bb47bebb1aa010d8fd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1851083535510838, guid: 8a41ccf7f50a0bb47bebb1aa010d8fd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4396417133449288, guid: 8a41ccf7f50a0bb47bebb1aa010d8fd5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -18.559458
@@ -7761,6 +7865,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall_lamp1 (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 111670, guid: 3e1610affb6d74bd19d3897a80b395ab, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 440470, guid: 3e1610affb6d74bd19d3897a80b395ab, type: 3}
       propertyPath: m_LocalPosition.x
       value: 16.634893
@@ -8042,9 +8150,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1262917279}
     m_Modifications:
+    - target: {fileID: 1000011337358206, guid: b53a6f42b18874e41b5848addda1acdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 1000013386087490, guid: b53a6f42b18874e41b5848addda1acdc, type: 3}
       propertyPath: m_Name
       value: Pot
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013386087490, guid: b53a6f42b18874e41b5848addda1acdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4000010944071766, guid: b53a6f42b18874e41b5848addda1acdc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8336,6 +8452,22 @@ PrefabInstance:
     - target: {fileID: 1122964723992546, guid: 8a41ccf7f50a0bb47bebb1aa010d8fd5, type: 3}
       propertyPath: m_Name
       value: Bullet_45mm_Full (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1122964723992546, guid: 8a41ccf7f50a0bb47bebb1aa010d8fd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1155386949238690, guid: 8a41ccf7f50a0bb47bebb1aa010d8fd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289114775797420, guid: 8a41ccf7f50a0bb47bebb1aa010d8fd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1851083535510838, guid: 8a41ccf7f50a0bb47bebb1aa010d8fd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4396417133449288, guid: 8a41ccf7f50a0bb47bebb1aa010d8fd5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9217,7 +9349,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &662101187
 Transform:
@@ -9527,7 +9659,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &719750919
 Transform:
@@ -9893,6 +10025,10 @@ PrefabInstance:
     - target: {fileID: 111670, guid: 3e1610affb6d74bd19d3897a80b395ab, type: 3}
       propertyPath: m_Name
       value: wall_lamp1 (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 111670, guid: 3e1610affb6d74bd19d3897a80b395ab, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 440470, guid: 3e1610affb6d74bd19d3897a80b395ab, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10918,7 +11054,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &851141977
 Transform:
@@ -11114,7 +11250,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &864637657
 Transform:
@@ -11770,7 +11906,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &897264016
 Transform:
@@ -11857,6 +11993,10 @@ PrefabInstance:
     - target: {fileID: 111670, guid: 3e1610affb6d74bd19d3897a80b395ab, type: 3}
       propertyPath: m_Name
       value: wall_lamp1 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 111670, guid: 3e1610affb6d74bd19d3897a80b395ab, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 440470, guid: 3e1610affb6d74bd19d3897a80b395ab, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12679,7 +12819,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &922573712
 Transform:
@@ -12767,6 +12907,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall_lamp1 (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 111670, guid: 3e1610affb6d74bd19d3897a80b395ab, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 440470, guid: 3e1610affb6d74bd19d3897a80b395ab, type: 3}
       propertyPath: m_LocalPosition.x
       value: 27.654894
@@ -12846,7 +12990,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &944711662
 Transform:
@@ -12938,7 +13082,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &955749825
 Transform:
@@ -14317,9 +14461,41 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1854326019}
     m_Modifications:
+    - target: {fileID: 1148920189750276, guid: dfe8fefa5bc33d54c9e0a213c042b75d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1296106433049264, guid: dfe8fefa5bc33d54c9e0a213c042b75d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1620836313862154, guid: dfe8fefa5bc33d54c9e0a213c042b75d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1671745212137676, guid: dfe8fefa5bc33d54c9e0a213c042b75d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1740296343474812, guid: dfe8fefa5bc33d54c9e0a213c042b75d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753899372742722, guid: dfe8fefa5bc33d54c9e0a213c042b75d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1762746446689110, guid: dfe8fefa5bc33d54c9e0a213c042b75d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 1810581554106536, guid: dfe8fefa5bc33d54c9e0a213c042b75d, type: 3}
       propertyPath: m_Name
       value: Handgun_M1911A_Black
+      objectReference: {fileID: 0}
+    - target: {fileID: 1810581554106536, guid: dfe8fefa5bc33d54c9e0a213c042b75d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4235179229403270, guid: dfe8fefa5bc33d54c9e0a213c042b75d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14394,7 +14570,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1067326110
 Transform:
@@ -14923,7 +15099,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1111472663
 Transform:
@@ -15016,6 +15192,42 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 46fbe438016f1ef42a93a3237ba16514, type: 3}
       propertyPath: m_Name
       value: cabinet (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 46fbe438016f1ef42a93a3237ba16514, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 46fbe438016f1ef42a93a3237ba16514, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 46fbe438016f1ef42a93a3237ba16514, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: 46fbe438016f1ef42a93a3237ba16514, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: 46fbe438016f1ef42a93a3237ba16514, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: 46fbe438016f1ef42a93a3237ba16514, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100012, guid: 46fbe438016f1ef42a93a3237ba16514, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100014, guid: 46fbe438016f1ef42a93a3237ba16514, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100016, guid: 46fbe438016f1ef42a93a3237ba16514, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 46fbe438016f1ef42a93a3237ba16514, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15439,7 +15651,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1168260299
 Transform:
@@ -15526,6 +15738,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: bcae914220acd4907840a029bb9d9aec, type: 3}
       propertyPath: m_Name
       value: WaterProNighttime
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: bcae914220acd4907840a029bb9d9aec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: bcae914220acd4907840a029bb9d9aec, type: 3}
       propertyPath: m_LocalPosition.x
@@ -20444,9 +20660,17 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3eb2387e2a5477a418fa14975e5fd564, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 3eb2387e2a5477a418fa14975e5fd564, type: 3}
       propertyPath: m_Name
       value: table_lamp1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 3eb2387e2a5477a418fa14975e5fd564, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3eb2387e2a5477a418fa14975e5fd564, type: 3}
       propertyPath: m_LocalRotation.x
@@ -20777,6 +21001,10 @@ PrefabInstance:
     - target: {fileID: 111670, guid: 3e1610affb6d74bd19d3897a80b395ab, type: 3}
       propertyPath: m_Name
       value: wall_lamp1 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 111670, guid: 3e1610affb6d74bd19d3897a80b395ab, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 440470, guid: 3e1610affb6d74bd19d3897a80b395ab, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21591,7 +21819,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1316309406
 Transform:
@@ -21683,7 +21911,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1317490038
 Transform:
@@ -22513,6 +22741,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall_lamp1 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 111670, guid: 3e1610affb6d74bd19d3897a80b395ab, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 440470, guid: 3e1610affb6d74bd19d3897a80b395ab, type: 3}
       propertyPath: m_LocalPosition.x
       value: 14.534894
@@ -22939,6 +23171,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall_lamp1 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 111670, guid: 3e1610affb6d74bd19d3897a80b395ab, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 440470, guid: 3e1610affb6d74bd19d3897a80b395ab, type: 3}
       propertyPath: m_LocalPosition.x
       value: 31.144894
@@ -23196,7 +23432,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1403249024
 Transform:
@@ -23700,6 +23936,10 @@ PrefabInstance:
     - target: {fileID: 123640, guid: 4d84a12dc1a5c464b94987d4e46d0bec, type: 3}
       propertyPath: m_Name
       value: standing_lamp4 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 123640, guid: 4d84a12dc1a5c464b94987d4e46d0bec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 418238, guid: 4d84a12dc1a5c464b94987d4e46d0bec, type: 3}
       propertyPath: m_LocalPosition.x
@@ -29530,6 +29770,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: table_lamp4
       objectReference: {fileID: 0}
+    - target: {fileID: 185166, guid: 07f9723d8ce574b4ab20861e328a6659, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 408136, guid: 07f9723d8ce574b4ab20861e328a6659, type: 3}
       propertyPath: m_LocalPosition.x
       value: 12.744894
@@ -29899,7 +30143,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1480741300
 Transform:
@@ -35195,7 +35439,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1510757457
 Transform:
@@ -35607,7 +35851,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1518545481
 Transform:
@@ -35695,6 +35939,10 @@ PrefabInstance:
     - target: {fileID: 111670, guid: 3e1610affb6d74bd19d3897a80b395ab, type: 3}
       propertyPath: m_Name
       value: wall_lamp1 (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 111670, guid: 3e1610affb6d74bd19d3897a80b395ab, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 440470, guid: 3e1610affb6d74bd19d3897a80b395ab, type: 3}
       propertyPath: m_LocalPosition.x
@@ -36115,7 +36363,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1548100035
 Transform:
@@ -36839,7 +37087,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1602449316
 Transform:
@@ -37039,7 +37287,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1626468182
 Transform:
@@ -37273,6 +37521,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: standing_lamp4
       objectReference: {fileID: 0}
+    - target: {fileID: 123640, guid: 4d84a12dc1a5c464b94987d4e46d0bec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 418238, guid: 4d84a12dc1a5c464b94987d4e46d0bec, type: 3}
       propertyPath: m_LocalPosition.x
       value: 17.994894
@@ -37450,6 +37702,10 @@ PrefabInstance:
     - target: {fileID: 148664, guid: 0ea924bb2e01d4e958266cfba2d572bf, type: 3}
       propertyPath: m_Name
       value: wall_lamp2 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 148664, guid: 0ea924bb2e01d4e958266cfba2d572bf, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 414614, guid: 0ea924bb2e01d4e958266cfba2d572bf, type: 3}
       propertyPath: m_LocalPosition.x
@@ -38419,7 +38675,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1767434282
 Transform:
@@ -38834,7 +39090,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1803442242
 Transform:
@@ -38998,7 +39254,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1854326019
 Transform:
@@ -39027,6 +39283,42 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 46fbe438016f1ef42a93a3237ba16514, type: 3}
       propertyPath: m_Name
       value: cabinet
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 46fbe438016f1ef42a93a3237ba16514, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 46fbe438016f1ef42a93a3237ba16514, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 46fbe438016f1ef42a93a3237ba16514, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: 46fbe438016f1ef42a93a3237ba16514, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: 46fbe438016f1ef42a93a3237ba16514, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: 46fbe438016f1ef42a93a3237ba16514, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100012, guid: 46fbe438016f1ef42a93a3237ba16514, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100014, guid: 46fbe438016f1ef42a93a3237ba16514, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100016, guid: 46fbe438016f1ef42a93a3237ba16514, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 46fbe438016f1ef42a93a3237ba16514, type: 3}
       propertyPath: m_LocalPosition.x
@@ -39194,7 +39486,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1893512424
 Transform:
@@ -39286,7 +39578,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1902539903
 Transform:
@@ -39669,7 +39961,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1942043131
 Transform:
@@ -40052,6 +40344,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bullet_45mm_Full (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1122964723992546, guid: 8a41ccf7f50a0bb47bebb1aa010d8fd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1155386949238690, guid: 8a41ccf7f50a0bb47bebb1aa010d8fd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289114775797420, guid: 8a41ccf7f50a0bb47bebb1aa010d8fd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1851083535510838, guid: 8a41ccf7f50a0bb47bebb1aa010d8fd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4396417133449288, guid: 8a41ccf7f50a0bb47bebb1aa010d8fd5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -17.920458
@@ -40233,7 +40541,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1983913660
 Transform:
@@ -40424,7 +40732,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2008797598
 Transform:
@@ -40837,9 +41145,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1262917279}
     m_Modifications:
+    - target: {fileID: 1000011151092476, guid: f04c05793d726924298a4ceb031510c4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 1000013459390686, guid: f04c05793d726924298a4ceb031510c4, type: 3}
       propertyPath: m_Name
       value: Spoon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013459390686, guid: f04c05793d726924298a4ceb031510c4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4000014223676656, guid: f04c05793d726924298a4ceb031510c4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -40908,7 +41224,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2044319376
 Transform:
@@ -40996,9 +41312,17 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ed217856a35c1f146b78a7a7015c8ac1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: ed217856a35c1f146b78a7a7015c8ac1, type: 3}
       propertyPath: m_Name
       value: table_lamp2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: ed217856a35c1f146b78a7a7015c8ac1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ed217856a35c1f146b78a7a7015c8ac1, type: 3}
       propertyPath: m_LocalRotation.x
@@ -41207,6 +41531,22 @@ PrefabInstance:
     - target: {fileID: 1122964723992546, guid: 8a41ccf7f50a0bb47bebb1aa010d8fd5, type: 3}
       propertyPath: m_Name
       value: Bullet_45mm_Full
+      objectReference: {fileID: 0}
+    - target: {fileID: 1122964723992546, guid: 8a41ccf7f50a0bb47bebb1aa010d8fd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1155386949238690, guid: 8a41ccf7f50a0bb47bebb1aa010d8fd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289114775797420, guid: 8a41ccf7f50a0bb47bebb1aa010d8fd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1851083535510838, guid: 8a41ccf7f50a0bb47bebb1aa010d8fd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4396417133449288, guid: 8a41ccf7f50a0bb47bebb1aa010d8fd5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -42352,6 +42692,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall_lamp1 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 111670, guid: 3e1610affb6d74bd19d3897a80b395ab, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 440470, guid: 3e1610affb6d74bd19d3897a80b395ab, type: 3}
       propertyPath: m_LocalPosition.x
       value: 31.144894
@@ -42423,9 +42767,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1262917279}
     m_Modifications:
+    - target: {fileID: 1000011337358206, guid: b53a6f42b18874e41b5848addda1acdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 1000013386087490, guid: b53a6f42b18874e41b5848addda1acdc, type: 3}
       propertyPath: m_Name
       value: Pot (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013386087490, guid: b53a6f42b18874e41b5848addda1acdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4000010944071766, guid: b53a6f42b18874e41b5848addda1acdc, type: 3}
       propertyPath: m_LocalPosition.x
