@@ -3,7 +3,142 @@ guid: 70a4ff0805650f642a6b4ad40a04bb2f
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bottomLegPart1Mat
+    second: {fileID: 2100000, guid: 8dd6eb503a960ea48bbbdbfc9c36f471, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bottomLegPart2Mat
+    second: {fileID: 2100000, guid: 8dd6eb503a960ea48bbbdbfc9c36f471, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bottomLegPartMat
+    second: {fileID: 2100000, guid: 8dd6eb503a960ea48bbbdbfc9c36f471, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: door1Mat
+    second: {fileID: 2100000, guid: 8dd6eb503a960ea48bbbdbfc9c36f471, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: door2Mat
+    second: {fileID: 2100000, guid: 8dd6eb503a960ea48bbbdbfc9c36f471, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: doorMat
+    second: {fileID: 2100000, guid: 8dd6eb503a960ea48bbbdbfc9c36f471, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hinge1Mat
+    second: {fileID: 2100000, guid: 2b61d65c22baeae46a3be91ebbdf2d49, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hingeMat
+    second: {fileID: 2100000, guid: 2b61d65c22baeae46a3be91ebbdf2d49, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: key10Mat
+    second: {fileID: 2100000, guid: 8dd6eb503a960ea48bbbdbfc9c36f471, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: key11Mat
+    second: {fileID: 2100000, guid: 8dd6eb503a960ea48bbbdbfc9c36f471, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: key94Mat
+    second: {fileID: 2100000, guid: 8dd6eb503a960ea48bbbdbfc9c36f471, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: key95Mat
+    second: {fileID: 2100000, guid: 8dd6eb503a960ea48bbbdbfc9c36f471, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: key96Mat
+    second: {fileID: 2100000, guid: 8dd6eb503a960ea48bbbdbfc9c36f471, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: key9Mat
+    second: {fileID: 2100000, guid: 8dd6eb503a960ea48bbbdbfc9c36f471, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: leg1Mat
+    second: {fileID: 2100000, guid: 8dd6eb503a960ea48bbbdbfc9c36f471, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: legPartMat
+    second: {fileID: 2100000, guid: 8dd6eb503a960ea48bbbdbfc9c36f471, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pedal1Mat
+    second: {fileID: 2100000, guid: 2b61d65c22baeae46a3be91ebbdf2d49, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pedal2Mat
+    second: {fileID: 2100000, guid: 2b61d65c22baeae46a3be91ebbdf2d49, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pedalBaseMat
+    second: {fileID: 2100000, guid: 2b61d65c22baeae46a3be91ebbdf2d49, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pedalMat
+    second: {fileID: 2100000, guid: 2b61d65c22baeae46a3be91ebbdf2d49, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: petalLeg1Mat
+    second: {fileID: 2100000, guid: 2b61d65c22baeae46a3be91ebbdf2d49, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: petalLegMat
+    second: {fileID: 2100000, guid: 2b61d65c22baeae46a3be91ebbdf2d49, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pianoMainMat
+    second: {fileID: 2100000, guid: 2b61d65c22baeae46a3be91ebbdf2d49, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pianoPart1Mat
+    second: {fileID: 2100000, guid: 2b61d65c22baeae46a3be91ebbdf2d49, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pianoPartMat
+    second: {fileID: 2100000, guid: 2b61d65c22baeae46a3be91ebbdf2d49, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pianoTop1Mat
+    second: {fileID: 2100000, guid: 2b61d65c22baeae46a3be91ebbdf2d49, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pianoTopMat
+    second: {fileID: 2100000, guid: 2b61d65c22baeae46a3be91ebbdf2d49, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -35,7 +170,7 @@ ModelImporter:
   meshes:
     lODScreenPercentages: []
     globalScale: 1
-    meshCompression: 0
+    meshCompression: 3
     addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1

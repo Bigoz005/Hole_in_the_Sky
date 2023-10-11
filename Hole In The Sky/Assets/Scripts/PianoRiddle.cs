@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 using UnityStandardAssets.Characters.FirstPerson;
+using UnityEngine.SceneManagement;
 
 public class PianoRiddle : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class PianoRiddle : MonoBehaviour
     public GameObject portalRoom;
     public GameObject player;
 
-    private Dictionary<string, Transform> pianoKeys = new Dictionary<string, Transform>();
+    private bool isMainMenu = false;
     private ArrayList keysD = new ArrayList() { "D1", "D2", "D3", "D4", "D5", "D6", "D7", "D8", "D9" };
     private ArrayList keysFis = new ArrayList() { "F#1", "F#2", "F#3", "F#4", "F#", "F#6", "F#7", "F#8", "F#9" };
     private ArrayList keysA = new ArrayList() { "A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9" };
@@ -25,9 +26,14 @@ public class PianoRiddle : MonoBehaviour
 
     void Start()
     {
-        portal.SetActive(false);
-        portalRoom.SetActive(false);
-        resolved = false;
+        isMainMenu = SceneManager.GetActiveScene().name.Equals("MainMenu");
+        
+        if (!isMainMenu)
+        {
+            portal.SetActive(false);
+            portalRoom.SetActive(false);
+            resolved = false;
+        }
 
         PostProcessVolume postProcessVolume = player.GetComponentInChildren<PostProcessVolume>();
         postProcessVolume.profile.TryGetSettings<ChromaticAberration>(out chromaticAberration);
